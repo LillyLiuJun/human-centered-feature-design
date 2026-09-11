@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human-Centered Feature Design · 独立产品功能设计框架</title>
+  <style>
+    :root {
+      --bg-page: #FAF8F5;
+      --bg-card: #FFFFFF;
+      --bg-warm-subtle: #F4EFEA;
+      --border-subtle: #E8E2D8;
+      --border-focus: #D4CABC;
+      --text-main: #1F1D1A;
+      --text-body: #47423C;
+      --text-muted: #857D74;
+      --accent-orange: #E05D26;
+      --accent-orange-soft: #FFF5EE;
+      --accent-orange-border: #FFD5BE;
+      --font-serif: -apple-system-ui-serif, ui-serif, "Songti SC", "Noto Serif CJK SC", Georgia, Cambria, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Segoe UI", Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand-mark {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+    }
+
+    .lang-selector {
+      display: inline-flex;
+      background: var(--bg-warm-subtle);
+      padding: 3px;
+      border-radius: 9999px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.82rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--bg-card);
+      color: var(--text-main);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      font-weight: 600;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      font-weight: 400;
+      color: var(--text-main);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+
+    .lead-text {
+      font-size: 1.2rem;
+      color: var(--text-body);
+      font-weight: 350;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .quote-card {
+      background: var(--accent-orange-soft);
+      border-left: 3px solid var(--accent-orange);
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+    }
+
+    .quote-card p {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      color: var(--text-main);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 4.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 400;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h2::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent-orange);
+      border-radius: 50%;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: var(--text-body);
+      font-size: 1.02rem;
+    }
+
+    /* Postulate Cards */
+    .postulates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+
+    .postulate-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .postulate-item:hover {
+      border-color: var(--border-focus);
+    }
+
+    .postulate-index {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-orange);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .postulate-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .postulate-desc {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    /* Modules Table / Flow */
+    .module-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .module-head {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge-soft {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      background: var(--accent-orange-soft);
+      color: var(--accent-orange);
+      border: 1px solid var(--accent-orange-border);
+    }
+
+    .module-body {
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    /* Golden Questions */
+    .checklist {
+      list-style: none;
+      margin-top: 1.25rem;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .checklist li::before {
+      content: "•";
+      position: absolute;
+      left: 0.5rem;
+      color: var(--accent-orange);
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* Reference Cases Box */
+    .cases-box {
+      background: var(--bg-warm-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .case-link-item {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .case-link-item:hover {
+      border-color: var(--accent-orange);
+      transform: translateY(-1px);
+    }
+
+    .case-item-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .case-item-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 2rem 1rem; }
+      h1 { font-size: 2.2rem; }
+      .postulates-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Nav -->
+    <nav>
+      <div class="brand-mark">Human-Centered Feature Design</div>
+      <div class="lang-selector">
+        <button class="lang-btn active" id="btn-zh" onclick="setLanguage('zh')">中文</button>
+        <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">English</button>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <h1 id="txt-title">以人为中心的产品功能设计</h1>
+      <p class="lead-text" id="txt-lead">
+        一套独立、自洽、普适的持续使用与留存设计框架。回归人类心理稳态，把掌控感还给用户。
+      </p>
+      
+      <div class="quote-card">
+        <p id="txt-quote">
+          “人不是产品的变量，产品才是人的变量。需求来自偏离稳态，产品帮用户回到平衡。产品无法创造需求，只能成为需求的出口。”
+        </p>
+      </div>
+    </header>
+
+    <!-- Foundational Worldview -->
+    <section>
+      <h2 id="txt-w-head">底层世界观：三个核心假设</h2>
+      <p id="txt-w-intro">
+        所有功能决策的推导，均根植于对人类认知与心理节律的尊重：
+      </p>
+
+      <div class="postulates-grid">
+        <div class="postulate-item">
+          <div class="postulate-index">01 · HOMEOSTASIS</div>
+          <div class="postulate-title" id="p1-name">系统稳态</div>
+          <div class="postulate-desc" id="p1-text">
+            人是自我调节的系统。需求源于偏离平衡，产品只能作为顺畅的出口，无法凭空制造渴望。
+          </div>
+        </div>
+
+        <div class="postulate-item">
+          <div class="postulate-index">02 · AGENCY</div>
+          <div class="postulate-title" id="p2-name">主观能动感</div>
+          <div class="postulate-desc" id="p2-text">
+            人认知脆弱但渴望感知掌控。系统的职责是隐形托住用户，同时把所有成就还给用户。好的系统是隐形的。
+          </div>
+        </div>
+
+        <div class="postulate-item">
+          <div class="postulate-index">03 · CONTEXT</div>
+          <div class="postulate-title" id="p3-name">处境感知</div>
+          <div class="postulate-desc" id="p3-text">
+            人永远活在真实处境里。信号是否生效取决于与当下空间、时间、心理负荷的匹配。产品的影响力是借来的。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 3 Modules -->
+    <section>
+      <h2 id="txt-m-head">三大设计模块</h2>
+
+      <div class="module-card">
+        <div class="module-head">
+          <span id="m1-title">模块一：动机设计</span>
+          <span class="badge-soft" id="m1-badge">需求出口</span>
+        </div>
+        <div class="module-body" id="m1-body">
+          区分离散型（用结果换信任，追求精准）与连续型（用延续换粘性，平衡点埋下未完成感）。管理欠账张力而非堆积静态库存。
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-head">
+          <span id="m2-title">模块二：能力感设计</span>
+          <span class="badge-soft" id="m2-badge">六大环节</span>
+        </div>
+        <div class="module-body" id="m2-body">
+          贯穿感知、搜寻关联、决策、行为、结果评价与习惯。核心路径减去摩擦，承诺严格对齐交付，让用户真切感知“我做到了”。
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-head">
+          <span id="m3-title">模块三：触发设计</span>
+          <span class="badge-soft" id="m3-badge">处境化激活</span>
+        </div>
+        <div class="module-body" id="m3-body">
+          解构空间、时间与心理余量。运用 FBM 精准识别行为缺口（动机、能力还是时机），在缺口处投放支架，杜绝机械骚扰。
+        </div>
+      </div>
+    </section>
+
+    <!-- Golden Questions -->
+    <section>
+      <h2 id="txt-q-head">三条黄金检验原则</h2>
+      <p id="txt-q-intro">每个设计决策在上线前，均用这三个问题审视：</p>
+      <ul class="checklist" id="list-questions">
+        <li>这个设计是在帮用户回到平衡，还是在制造新的焦虑？</li>
+        <li>这个设计让用户感觉是自己在掌控，还是被系统牵着走？</li>
+        <li>这个设计嵌入了用户的真实处境，还是在制造脱离处境的噪音？</li>
+      </ul>
+    </section>
+
+    <!-- Real-world Case Studies Box -->
+    <section>
+      <h2 id="txt-c-head">实战参考案例 (Reference Cases)</h2>
+      <p id="txt-c-intro">
+        为了展示框架在实际业务中的具体推导过程，本框架附带了两篇真实产品的设计复盘：
+      </p>
+
+      <div class="cases-box">
+        <a href="examples/01-talk-about-today-cards.md" class="case-link-item">
+          <div class="case-item-title" id="c1-title">案例 01：话题卡重构——内容契约与处境的对齐</div>
+          <div class="case-item-sub" id="c1-sub">探讨如何在固定练习时段识别真正需要的能力感支撑，而非盲目制造动机。</div>
+        </a>
+
+        <a href="examples/02-expand-collapse-state.md" class="case-link-item">
+          <div class="case-item-title" id="c2-title">案例 02：动态阅读状态——三重处境边界的拆解</div>
+          <div class="case-item-sub" id="c2-sub">探讨卡片展开作为“临时注意力状态”的生命周期与隐形系统设计。</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div>Human-Centered Feature Design · MIT License</div>
+      <div>A Calm, Principled Product Framework</div>
+    </footer>
+
+  </div>
+
+  <script>
+    const data = {
+      zh: {
+        title: "以人为中心的产品功能设计",
+        lead: "一套独立、自洽、普适的持续使用与留存设计框架。回归人类心理稳态，把掌控感还给用户。",
+        quote: "“人不是产品的变量，产品才是人的变量。需求来自偏离稳态，产品帮用户回到平衡。产品无法创造需求，只能成为需求的出口。”",
+        wHead: "底层世界观：三个核心假设",
+        wIntro: "所有功能决策的推导，均根植于对人类认知与心理节律的尊重：",
+        p1Name: "系统稳态 (Homeostasis)",
+        p1Text: "人是自我调节的系统。需求源于偏离平衡，产品只能作为顺畅的出口，无法凭空制造渴望。",
+        p2Name: "主观能动感 (Agency)",
+        p2Text: "人认知脆弱但渴望感知掌控。系统的职责是隐形托住用户，同时把所有成就还给用户。好的系统是隐形的。",
+        p3Name: "处境感知 (Situated)",
+        p3Text: "人永远活在真实处境里。信号是否生效取决于与当下空间、时间、心理负荷的匹配。产品的影响力是借来的。",
+        mHead: "三大设计模块",
+        m1Title: "模块一：动机设计",
+        m1Badge: "需求出口",
+        m1Body: "区分离散型（用结果换信任，追求精准）与连续型（用延续换粘性，平衡点埋下未完成感）。管理欠账张力而非堆积静态库存。",
+        m2Title: "模块二：能力感设计",
+        m2Badge: "六大环节",
+        m2Body: "贯穿感知、搜寻关联、决策、行为、结果评价与习惯。核心路径减去摩擦，承诺严格对齐交付，让用户真切感知“我做到了”。",
+        m3Title: "模块三：触发设计",
+        m3Badge: "处境化激活",
+        m3Body: "解构空间、时间与心理余量。运用 FBM 精准识别行为缺口（动机、能力还是时机），在缺口处投放支架，杜绝机械骚扰。",
+        qHead: "三条黄金检验原则",
+        qIntro: "每个设计决策在上线前，均用这三个问题审视：",
+        questions: [
+          "这个设计是在帮用户回到平衡，还是在制造新的焦虑？",
+          "这个设计让用户感觉是自己在掌控，还是被系统牵着走？",
+          "这个设计嵌入了用户的真实处境，还是在制造脱离处境的噪音？"
+        ],
+        cHead: "实战参考案例 (Reference Cases)",
+        cIntro: "为了展示框架在实际业务中的具体推导过程，本框架附带了两篇真实产品的设计复盘：",
+        c1Title: "案例 01：话题卡重构——内容契约与处境的对齐",
+        c1Sub: "探讨如何在固定练习时段识别真正需要的能力感支撑，而非盲目制造动机。",
+        c2Title: "案例 02：动态阅读状态——三重处境边界的拆解",
+        c2Sub: "探讨卡片展开作为“临时注意力状态”的生命周期与隐形系统设计。"
+      },
+      en: {
+        title: "Human-Centered Feature Design",
+        lead: "A calm, principled framework for continuous feature engagement and situated retention. Rooted in human homeostasis and sovereign user agency.",
+        quote: "“Humans are not variables of products; products are variables of humans. Needs arise from deviations from homeostasis; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”",
+        wHead: "The Foundational Worldview",
+        wIntro: "All architectural deductions stem from quiet respect for human psychological rhythms:",
+        p1Name: "Human Homeostasis",
+        p1Text: "Humans are self-regulating systems. Need stems from disequilibrium. Products cannot invent desire; they only serve as relief valves.",
+        p2Name: "Sense of Agency",
+        p2Text: "Humans are cognitively fragile yet crave sovereignty. The system scaffolds invisibly and credits the human. The best system is quiet.",
+        p3Name: "Situated Context",
+        p3Text: "Humans live in concrete situations. Influence is borrowed from contextual fit, never permanently owned by the product.",
+        mHead: "The Three Architectural Modules",
+        m1Title: "Module 1: Motivation Architecture",
+        m1Badge: "Need Topology",
+        m1Body: "Discrete needs trade precision outcomes for trust. Continuous needs trade gentle unfinished momentum for stickiness. Manage digestive debt over inert inventory.",
+        m2Title: "Module 2: Sense of Agency",
+        m2Badge: "6 Touchpoints",
+        m2Body: "Spans Perception, Search, Decision, Action, Result Evaluation, and Habit. Subtract friction along the Golden Path; align entry promise strictly with delivery.",
+        m3Title: "Module 3: Trigger Design",
+        m3Badge: "Situated Nudges",
+        m3Body: "Deconstruct physical space, temporal baselines, and cognitive bandwidth. Use FBM gap diagnosis to provide precise scaffolding without noise.",
+        qHead: "The Three Golden Questions",
+        qIntro: "Evaluate every product decision against these three immutable criteria:",
+        questions: [
+          "Is this design helping the user restore balance, or is it engineering artificial anxiety?",
+          "Does this design leave the user feeling sovereign and in control, or dragged along by system mechanics?",
+          "Is this design embedded naturally in the user's real-world context, or is it introducing intrusive noise?"
+        ],
+        cHead: "Reference Implementations",
+        cIntro: "To demonstrate how this independent framework applies to concrete product decisions, two retrospectives are included:",
+        c1Title: "Case 01: Topic Card Redesign — Content Contract & Context Alignment",
+        c1Sub: "Diagnosing a content contract fracture and addressing decision agency during deliberate practice sessions.",
+        c2Title: "Case 02: Dynamic Reading State — The 3 Situational Boundaries",
+        c2Sub: "Treating expansion as a temporary attentional state and engineering quiet off-screen resets."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+      const d = data[lang];
+      document.getElementById('txt-title').innerText = d.title;
+      document.getElementById('txt-lead').innerText = d.lead;
+      document.getElementById('txt-quote').innerText = d.quote;
+      document.getElementById('txt-w-head').innerText = d.wHead;
+      document.getElementById('txt-w-intro').innerText = d.wIntro;
+
+      document.getElementById('p1-name').innerText = d.p1Name;
+      document.getElementById('p1-text').innerText = d.p1Text;
+      document.getElementById('p2-name').innerText = d.p2Name;
+      document.getElementById('p2-text').innerText = d.p2Text;
+      document.getElementById('p3-name').innerText = d.p3Name;
+      document.getElementById('p3-text').innerText = d.p3Text;
+
+      document.getElementById('txt-m-head').innerText = d.mHead;
+      document.getElementById('m1-title').innerText = d.m1Title;
+      document.getElementById('m1-badge').innerText = d.m1Badge;
+      document.getElementById('m1-body').innerText = d.m1Body;
+      document.getElementById('m2-title').innerText = d.m2Title;
+      document.getElementById('m2-badge').innerText = d.m2Badge;
+      document.getElementById('m2-body').innerText = d.m2Body;
+      document.getElementById('m3-title').innerText = d.m3Title;
+      document.getElementById('m3-badge').innerText = d.m3Badge;
+      document.getElementById('m3-body').innerText = d.m3Body;
+
+      document.getElementById('txt-q-head').innerText = d.qHead;
+      document.getElementById('txt-q-intro').innerText = d.qIntro;
+      document.getElementById('list-questions').innerHTML = d.questions.map(q => `<li>${q}</li>`).join('');
+
+      document.getElementById('txt-c-head').innerText = d.cHead;
+      document.getElementById('txt-c-intro').innerText = d.cIntro;
+      document.getElementById('c1-title').innerText = d.c1Title;
+      document.getElementById('c1-sub').innerText = d.c1Sub;
+      document.getElementById('c2-title').innerText = d.c2Title;
+      document.getElementById('c2-sub').innerText = d.c2Sub;
+    }
+  </script>
+</body>
+</html>
