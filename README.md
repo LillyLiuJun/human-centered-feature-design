@@ -1,5 +1,9 @@
 <div align="center">
 
+<img src="assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
+
+<br /><br />
+
 # Human-Centered Feature Design
 ### `human-centered-feature-design`
 
