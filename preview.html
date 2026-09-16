@@ -332,10 +332,11 @@
     <header>
       <!-- Header Banner & Comparison Switcher -->
       <div style="margin-bottom: 2.5rem;">
-        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; font-size: 0.75rem;">
-          <span style="color: var(--text-muted);">Banner 实时对比:</span>
-          <button id="btn-banner-new" onclick="switchBanner('new')" style="padding: 3px 10px; border-radius: 4px; border: 1px solid var(--accent-orange); background: var(--accent-orange); color: white; cursor: pointer; font-size: 0.75rem; font-weight: 500;">高对比度白底 (光晕100%原色)</button>
-          <button id="btn-banner-orig" onclick="switchBanner('orig')" style="padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">原版 (灰度底色)</button>
+        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 0.4rem; margin-bottom: 0.6rem; font-size: 0.75rem; flex-wrap: wrap;">
+          <span style="color: var(--text-muted); margin-right: 0.2rem;">底色对比:</span>
+          <button id="btn-banner-warm" onclick="switchBanner('warm')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--accent-orange); background: var(--accent-orange); color: white; cursor: pointer; font-size: 0.75rem; font-weight: 500;">🌟 微暖通透白 (平衡版·推荐)</button>
+          <button id="btn-banner-pure" onclick="switchBanner('pure')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">❄️ 冷调纯白</button>
+          <button id="btn-banner-orig" onclick="switchBanner('orig')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">📄 原版 (灰度底)</button>
         </div>
         <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid var(--border-subtle);">
           <img id="banner-img" src="assets/readme-banner.png" alt="Human-Centered Feature Design Banner" style="width: 100%; display: block; height: auto;" />
@@ -581,27 +582,32 @@
 
     function switchBanner(type) {
       const img = document.getElementById('banner-img');
-      const btnNew = document.getElementById('btn-banner-new');
+      const btnWarm = document.getElementById('btn-banner-warm');
+      const btnPure = document.getElementById('btn-banner-pure');
       const btnOrig = document.getElementById('btn-banner-orig');
 
-      if (type === 'new') {
-        img.src = 'assets/readme-banner.png';
-        btnNew.style.background = 'var(--accent-orange)';
-        btnNew.style.color = 'white';
-        btnNew.style.borderColor = 'var(--accent-orange)';
+      // reset all buttons
+      [btnWarm, btnPure, btnOrig].forEach(btn => {
+        btn.style.background = 'var(--bg-card)';
+        btn.style.color = 'var(--text-muted)';
+        btn.style.borderColor = 'var(--border-subtle)';
+      });
 
-        btnOrig.style.background = 'var(--bg-card)';
-        btnOrig.style.color = 'var(--text-muted)';
-        btnOrig.style.borderColor = 'var(--border-subtle)';
+      if (type === 'warm') {
+        img.src = 'assets/readme-banner.png';
+        btnWarm.style.background = 'var(--accent-orange)';
+        btnWarm.style.color = 'white';
+        btnWarm.style.borderColor = 'var(--accent-orange)';
+      } else if (type === 'pure') {
+        img.src = 'assets/readme-banner-purewhite.png';
+        btnPure.style.background = 'var(--accent-orange)';
+        btnPure.style.color = 'white';
+        btnPure.style.borderColor = 'var(--accent-orange)';
       } else {
         img.src = 'assets/readme-banner-original.png';
         btnOrig.style.background = 'var(--accent-orange)';
         btnOrig.style.color = 'white';
         btnOrig.style.borderColor = 'var(--accent-orange)';
-
-        btnNew.style.background = 'var(--bg-card)';
-        btnNew.style.color = 'var(--text-muted)';
-        btnNew.style.borderColor = 'var(--border-subtle)';
       }
     }
   </script>
