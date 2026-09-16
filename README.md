@@ -21,130 +21,182 @@ Needs arise from deviations from balance; products serve as vehicles to restore 
 
 </div>
 
-## Overview
+## Core Purpose: What Is This Framework?
 
-**Human-Centered Feature Design** is a standalone, general-purpose framework and AI coding agent skill for designing sustainable product features.
+**Human-Centered Feature Design** is a **situated needs and behavioral inference engine**.
 
-In modern software development, feature iterations often stall not from lack of effort, but from misaligned premises: attempting to manufacture artificial motivation where it is not needed, while overlooking the quiet sense of agency users actually require.
+In a single sentence: **It deduces what users genuinely need in specific situations—bridging macro product strategy down to micro interaction states.**
 
-This framework grounds feature decisions in human psychology rather than arbitrary conversion funnels. It can be used independently by product teams, designers, indie makers, or loaded directly into AI coding environments (Claude Code, Antigravity, Cursor) to guide feature architecture, UX flows, and retention mechanisms.
+Its analytical power cuts across scales:
+* **System-level feature design**: Defining the psychological contract of a feature and clarifying its delivery format (is it relieving cognitive friction, or piling on new digestive debt?);
+* **Single-point interaction design**: Deducing the transient lifecycle of an active component (when a reading card expands, under what exact conditions should it stay open, and when should it silently reset?).
+
+---
+
+## Guardrails: What This Is NOT (Anti-Misuse)
+
+To preserve the framework's analytical rigor, its operational boundaries are strictly defined:
+
+* ❌ **It is NOT**:
+  * A tool for brainstorming random business models from thin air;
+  * A playbook of growth-hacking gimmicks, artificial streaks, gamified badges, or notification spam to manufacture synthetic engagement.
+* ✅ **Its True Mission**:
+  * **To stress-test and refine an already-scoped feature, ensuring that its psychological mechanics genuinely fulfill authentic human needs rather than team-centric "vanity pseudo-designs."**
+
+---
+
+## When to Use This Framework
+
+Activate this framework when you or your AI Coding Agent face the following production challenges:
+
+### Scenario 1: Defining a Feature's Core Contract (From Inert Inventory to Situated Delivery)
+* **Context**: The feature concept is agreed upon, but the team instinctively defaults to stacking categories, filters, or endless catalog rows—overwhelming the user's finite situated bandwidth.
+* **Production Retrospective**:  
+  👉 **[Case 01: The Topic Card System — From Category Clutter to Contract Alignment](#case-01-the-topic-card-system--content-contract--context-alignment)**  
+  *During dedicated practice time, users do not want the anxiety of browsing 40 broad categories; they need an instant, low-friction contract card with predictable conversational bounds.*
+
+### Scenario 2: Deducing Contextual Boundaries for Micro-Interactions
+* **Context**: Designing an active UI component (such as expand/collapse cards, transient modals, drafts, or multi-step sheets) and deciding when state should persist versus when it must silently reset to zero debt.
+* **Production Retrospective**:  
+  👉 **[Case 02: Dynamic Reading States — Deducing the 3 Situational Boundaries](#case-02-dynamic-reading-states--the-3-situational-boundaries)**  
+  *Card expansion is an ephemeral "transient attentional state," not permanent content. Deducing when to protect deep reading flow vs. when to silently reset off-screen without visual clutter.*
+
+### Scenario 3: Auditing Existing Features to Purge "Team Vanity"
+* **Context**: An existing feature looks polished in design reviews, but real users churn or express quiet fatigue. Use the framework's Litmus Tests to inspect whether the feature restores equilibrium or manufactures artificial anxiety.
+
+---
+
+## Quick Start & AI Coding Agent Integration
+
+### Why AI Coding Agents (Claude Code / Cursor / Antigravity) Need This Skill
+Modern LLMs default to generic product patterns: push notifications, streak modals, rigid steppers, and superficial gamification. Loading this Skill equips the Agent with **editorial restraint and psychological deduction**, forcing the model to evaluate cognitive contracts before writing UI code.
+
+### 1. Installation (1-Minute Setup)
+
+#### Method A: Claude Code Global Skill
+```bash
+# Clone and link to your local Claude Code skills directory
+git clone https://github.com/your-username/human-centered-feature-design.git
+mkdir -p ~/.config/skills/human-centered-feature-design
+cp human-centered-feature-design/SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
+```
+
+#### Method B: Cursor / Windsurf / Antigravity Project Rule
+Copy `SKILL.md` (or Chinese `SKILL_zh.md`) directly into your project's `.cursorrules`, `.rules`, or `.github/agent-skills/` directory.
+
+### 2. Pairing with Your Agent
+
+Prompt your coding assistant directly:
+> *"Audit this interactive component using human-centered-feature-design. Is it solving an authentic situated need, or introducing artificial friction?"*  
+> *"Why are users dropping off on this screen? Run a diagnosis across the 6 Agency Touchpoints."*  
+> *"Review this PR against the Three Litmus Tests before we merge."*
+
+---
+
+## Production Retrospectives (`examples/`)
+
+The repository includes two comprehensive production case studies from a commercial AI language immersion app, demonstrating how theoretical deduction rescues real features:
+
+### Case 01: The Topic Card System — Content Contract & Context Alignment
+> Full retrospective: [`examples/01-talk-about-today-cards.md`](examples/01-talk-about-today-cards.md)
+
+* **Initial Pseudo-Design**: The team assumed low CTR on "Daily Topic" cards was a visual issue, planning fancier animations and more categories.
+* **Situated Diagnosis**:
+  1. Users opening the app during dedicated practice times already possess high intrinsic motivation; they do not need synthetic hype.
+  2. The actual bottleneck was **decision friction**—users had no idea how long a broad category like "Travel" would take or what it demanded.
+  3. The card broke its contract: promising a specific prompt ("Talk about yesterday's dream") but delivering an abstract category list.
+* **Resolution**: Rebuilt from "categories" to "strict contract cards"; shifted from static inventory to digestive debt management; decision friction dropped to zero.
+
+---
+
+### Case 02: Dynamic Reading States — The 3 Situational Boundaries
+> Full retrospective: [`examples/02-expand-collapse-state.md`](examples/02-expand-collapse-state.md)
+
+* **Initial Pseudo-Design**: To support deep reading, cards expanded on tap. But keeping them expanded cluttered the screen upon return, while mechanical auto-collapse cut off active readers mid-sentence.
+* **Situated Diagnosis**:
+  1. Card expansion is not permanent content state, but an ephemeral **"transient focus state."**
+  2. Once the user's attention shifts (scrolled off-screen, switched tabs, locked phone), the focus state has expired. Persisting it burdens the user with visual clutter.
+* **Resolution**: Deduced three rigorous situational boundaries:
+  * *Micro-interruption in viewport* (brief pause, incoming call) ➔ **Protect flow; never collapse**;
+  * *Completely leaves viewport* (scrolled out of sight) ➔ **Silent, smooth reset without visual jumps**;
+  * *Leaves page/tab* (switching context) ➔ **Silent reset to pristine order**.
 
 ---
 
 ## The Foundational Worldview
 
-Every decision in this framework stems from three core postulates about human nature:
+All situated deductions stem from three immutable assumptions regarding human psychology:
 
 ```
                     ┌────────────────────────────────────────┐
-                    │          Human in Situated Context     │
-                    │  (Attention Bandwidth & Daily Rhythms) │
+                    │            The Human in Situ           │
+                    │ (Finite cognitive load, biological     │
+                    │   rhythms, and environmental context)   │
                     └───────────────────┬────────────────────┘
                                         │
-                       Deviation from Natural Equilibrium
+                               Deviates from balance
                                         │
                                         ▼
                     ┌────────────────────────────────────────┐
-                    │            The Calm Product            │
+                    │       Product as Relief Valve          │
                     ├────────────────────────────────────────┤
-                    │  • Motivation: Match Need Topology     │
-                    │  • Sense of Agency: The 6 Touchpoints  │
-                    │  • Trigger: Diagnose Situational Gaps  │
+                    │ • Motivation: Need topology alignment  │
+                    │ • Sense of Agency: 6 Touchpoints        │
+                    │ • Trigger: FBM contextual gap diagnosis │
                     └───────────────────┬────────────────────┘
                                         │
                                         ▼
-                   Restored Balance · User Feels in Control
+                       Balance Restored · Sovereign Agency Felt
 ```
 
-1. **Humans are Self-Regulating Systems (Homeostasis)**  
-   Needs arise when an individual deviates from internal equilibrium (deficiency or overflow). A product cannot manufacture genuine human desire; it can only serve as a friction-free outlet through which existing tension resolves.
-2. **Humans are Cognitively Fragile, yet Crave a Sense of Agency**  
-   The highest responsibility of a system is to scaffold the user quietly while returning all credit and feeling of capability back to them. **A truly great system is invisible.**
-3. **Humans Always Live in Situated Contexts**  
-   Whether any feature signal or prompt takes effect depends entirely on its fit with the user's immediate space, time, and mental headroom. **Product influence is borrowed from context, never owned.**
+1. **Human Homeostasis**: Humans are self-regulating systems. Needs arise from disequilibrium. Products cannot manufacture organic desire; they can only serve as frictionless relief valves.
+2. **Sense of Agency**: Humans are cognitively fragile yet crave sovereignty. The system's highest virtue is invisible scaffolding, crediting all achievement to the human. **Great systems are quiet.**
+3. **Situated Context**: Humans live in concrete physical situations. Influence is borrowed from contextual fit, never permanently owned by the product.
 
 ---
 
-## Core Architecture
+## The 3-Part Architecture
 
-The framework guides feature design across three distinct architectural layers:
-
-### 1. Motivation Architecture: Aligning with Need Topology
-
-| Need Type | Characteristic | Examples | Retention Principle |
+### Module 1: Motivation Architecture — Products as Relief Valves
+| Need Type | Dynamics | Examples | Retention Mechanism |
 |---|---|---|---|
-| **Discrete** | Completion is objectively verifiable; motivation terminates upon resolution. | Weather lookup, translation, routing | **Trade Outcomes for Trust**: Exceed expectations in outcome precision so the tool becomes a reflexive first recall next time. |
-| **Continuous** | No external benchmark marks completion; motivation surfaces and ebbs organically. | Curiosity, expression, quiet companionship | **Trade Continuity for Stickiness**: Satisfy the immediate moment while subtly planting an unfinished momentum before hedonic adaptation sets in. |
-| **Hybrid** | Grounded in objective milestones, yet the ceiling extends indefinitely. | Learning, writing, fitness | Combine precise outcome delivery with healthy conversational/digestive debt (Debt vs. Inert Inventory). |
+| **Discrete** | Clear, objective completion state. | Weather, dictionary, calculator | **Exchange results for trust**: Precise fulfillment builds subconscious recall for the next deviation. |
+| **Continuous** | No objective finish line; fluctuates with state. | Curiosity, expression, companionship | **Exchange continuity for stickiness**: Leave gentle unfinished momentum; manage digestive debt over static inventory. |
+| **Hybrid** | Measurable milestones with infinite horizons. | Language learning, writing, coding | Balance concrete results with sustainable progressive tension. |
 
-### 2. Sense of Agency: The 6 Interaction Touchpoints
-A genuine sense of agency is earned through quiet dignity at every stage of the flow:
-1. **Perception**: Help users recognize immediately: *"Yes, this is an outlet for what I need right now."*
-2. **Search & Association**: Align the system layout with pre-existing mental models to minimize cognitive expenditure.
-3. **Decision**: Keep primary paths effortless; provide clear reassurances and fallbacks whenever actions involve perceived cost, uncertainty, or irreversibility.
-4. **Action**: Deliver zero-latency status acknowledgement to prevent continuity fractures.
-5. **Result Evaluation**: **Upstream alignment** (never promise a specific item on a preview card and deliver a broad category upon tap); attribute the achievement to the user rather than flaunting algorithmic mechanics.
-6. **Habit Formation**: Polish and subtract along the Golden Path; prepare secondary depth pathways before adaptation sets in.
+### Module 2: Sense of Agency — The 6 Touchpoints
+Agency is not empty praise; it is earned across six interlocking touchpoints:
+1. **Perception**: Translate ambiguous impulses into tangible outlets ("Yes, this is my path forward").
+2. **Search & Association**: Align architecture with existing mental models, minimizing needless cognitive overhead.
+3. **Decision**: Eliminate decision friction along the Golden Path; provide undo mechanisms for irreversible actions.
+4. **Action**: Immediate physical feedback; protect continuous execution.
+5. **Result Evaluation**: **Strictly align entry promises with delivery**; attribute success to the user, not algorithm magic.
+6. **Habit Formation**: Never break core muscle memory; ready subsequent pathways at moments of peak satisfaction.
 
-### 3. Trigger Design: Situated Activation
-* **Deconstruct Real Context**: Physical space (constraints), temporal moment (biological rhythms), and psychological state (available cognitive bandwidth).
-* **Diagnose via FBM**: Pinpoint whether the behavioral gap lies in *Motivation*, *Perceived Ability (Cognitive Friction)*, or *Timing*.
-* **Contextual Scaffolding**: Manipulate only what the product legitimately controls (information density, pacing, atmosphere) to bridge the diagnosed gap without generating unsolicited noise.
-
----
-
-## Pre-Ship Evaluation: The Three Golden Questions
-
-Before committing any feature specification, review every decision against these three questions:
-
-1. **Is this design helping the user restore balance, or is it engineering artificial anxiety?**
-2. **Does this design leave the user feeling sovereign and in control, or dragged along by system mechanics?**
-3. **Is this design embedded naturally in the user's real-world context, or is it introducing intrusive noise?**
-
-*Only when all three questions can be answered in favor of the former is the design validated as human-centered.*
+### Module 3: Trigger Design — Situated Availability
+* **Deconstruct the Real Situation**: Spatial constraints, temporal baselines, and cognitive bandwidth.
+* **Diagnose the FBM Gap**: Is the user blocked by motivation, ability (cognitive friction), or poor timing?
+* **Scaffold Without Noise**: Provide precise scaffolding at the gap; eliminate unprompted mechanical push notifications.
 
 ---
 
-## Real-World Reference Implementations (`examples/`)
+## The Three Litmus Tests
 
-To demonstrate how this independent framework applies to concrete product decisions, the repository includes two design retrospectives from an AI English learning application:
+Before deploying any feature or interaction, audit it against these three filters:
 
-* **[Case 01: Topic Card Redesign — Content Contract and Context Alignment](examples/01-talk-about-today-cards.md)**  
-  *Context*: Topic discovery cards initially felt awkward and were assumed to be a layout styling issue.  
-  *Application*: Diagnosing a content contract fracture (promising a vivid sentence while delivering an abstract category) and recognizing that during a deliberate practice session, the missing gap was decision agency rather than motivation.
-* **[Case 02: Dynamic Reading State — The 3 Situational Boundaries](examples/02-expand-collapse-state.md)**  
-  *Context*: Defining when an expanded long-form reading card should auto-collapse.  
-  *Application*: Treating card expansion as a temporary attentional state rather than persistent document state, establishing three distinct boundaries: viewport exit, page exit, and transient interruptions.
+1. **Does this return the human to equilibrium, or manufacture synthetic anxiety?**
+2. **Does the user feel sovereign agency, or are they being piloted by system mechanics?**
+3. **Does this embed into the user's authentic situation, or create tone-deaf noise?**
 
----
-
-## Usage & Agent Integration
-
-### Skill File Format
-The complete prompt specification is available in both English and Chinese:
-- **`SKILL.md`**: Canonical English specification for international AI workflows.
-- **`SKILL_zh.md`**: Canonical Chinese specification preserving the author's original phrasing and nuances.
-
-### Integration with AI Coding Environments
-
-#### Claude Code / Antigravity
-```bash
-# Install globally for Claude Code or Antigravity CLI
-mkdir -p ~/.config/skills/human-centered-feature-design
-cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
-```
-
-#### Cursor / Local Project Setup
-Copy `SKILL.md` into your repository's `.cursor/rules/` or `.skills/human-centered-feature-design/SKILL.md`.
-
-#### Triggering in Conversation
-Invoke the skill naturally during product discussions:
-> *"Help me design the interaction flow for this feature..."*  
-> *"Why might users abandon this flow after the first session?"*  
-> *"Evaluate this screen using human-centered-feature-design."*
+*A design only ships when all three answers are unequivocally the former.*
 
 ---
 
-## License
+## Specifications & License
 
-Released under the [MIT License](LICENSE). Open, principled, and free for creators everywhere.
+* **`SKILL_zh.md`**: Complete Chinese specification (100% original text).
+* **`SKILL.md`**: English specification for international AI workflows.
+* **`examples/`**: Deep dive retrospective case studies.
+* **`preview.html`**: Zero-dependency live interactive preview.
+
+Released under the [MIT License](LICENSE). Calm, principled, and free.

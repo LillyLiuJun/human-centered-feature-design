@@ -34,11 +34,10 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
-    /* Navigation */
     nav {
       display: flex;
       justify-content: space-between;
@@ -92,7 +91,6 @@
       font-weight: 600;
     }
 
-    /* Header */
     header {
       margin-bottom: 4rem;
     }
@@ -131,7 +129,6 @@
       line-height: 1.7;
     }
 
-    /* Sections */
     section {
       margin-bottom: 4.5rem;
     }
@@ -148,189 +145,249 @@
     }
 
     h2::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      background: var(--accent-orange);
-      border-radius: 50%;
+      content: "§";
+      color: var(--accent-orange);
+      font-size: 1.1rem;
+      font-family: var(--font-mono);
     }
 
     p {
       margin-bottom: 1.25rem;
-      color: var(--text-body);
-      font-size: 1.02rem;
+      font-size: 1.05rem;
     }
 
-    /* Postulate Cards */
+    /* Purpose & Guardrails */
+    .callout-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+
+    .callout-header {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-orange);
+      margin-bottom: 0.75rem;
+    }
+
+    .guardrails-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .guardrails-grid { grid-template-columns: 1fr; }
+    }
+
+    .guardrail-card {
+      background: var(--bg-warm-subtle);
+      padding: 1.25rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .guardrail-card.no { border-left: 3px solid #D9534F; }
+    .guardrail-card.yes { border-left: 3px solid var(--accent-orange); }
+
+    .guardrail-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Scenarios */
+    .scenario-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .scenario-card:hover {
+      border-color: var(--border-focus);
+      transform: translateY(-2px);
+    }
+
+    .scenario-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--accent-orange);
+      background: var(--accent-orange-soft);
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .scenario-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .scenario-desc {
+      font-size: 0.98rem;
+      color: var(--text-body);
+      margin-bottom: 0.75rem;
+    }
+
+    .scenario-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent-orange);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--accent-orange);
+      padding-bottom: 1px;
+    }
+
+    .scenario-link:hover {
+      border-bottom-style: solid;
+    }
+
+    /* Code Block */
+    .code-block {
+      background: #23201D;
+      color: #E6E1DC;
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .code-comment {
+      color: #8C867E;
+    }
+
+    /* Retrospectives */
+    .retro-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .retro-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .retro-meta {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.5rem 1rem;
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .retro-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Postulates Grid */
     .postulates-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.25rem;
-      margin: 1.75rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .postulate-item {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
       padding: 1.5rem;
-      transition: border-color 0.2s ease;
-    }
-
-    .postulate-item:hover {
-      border-color: var(--border-focus);
+      border-radius: 8px;
     }
 
     .postulate-index {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--accent-orange);
-      font-weight: 600;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
     }
 
     .postulate-title {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-weight: 600;
+      font-size: 1.05rem;
       color: var(--text-main);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .postulate-desc {
       font-size: 0.92rem;
-      color: var(--text-body);
+      color: var(--text-muted);
       line-height: 1.65;
     }
 
-    /* Modules Table / Flow */
-    .module-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.75rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .module-head {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--text-main);
-      margin-bottom: 0.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .badge-soft {
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.2rem 0.55rem;
-      border-radius: 9999px;
-      background: var(--accent-orange-soft);
-      color: var(--accent-orange);
-      border: 1px solid var(--accent-orange-border);
-    }
-
-    .module-body {
-      font-size: 0.95rem;
-      color: var(--text-body);
-    }
-
-    /* Golden Questions */
+    /* Checklist */
     .checklist {
       list-style: none;
-      margin-top: 1.25rem;
+      margin: 1.5rem 0;
     }
 
     .checklist li {
       position: relative;
-      padding-left: 1.75rem;
-      margin-bottom: 0.85rem;
-      font-size: 1rem;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
       color: var(--text-main);
+      font-style: italic;
     }
 
     .checklist li::before {
-      content: "•";
+      content: "→";
       position: absolute;
-      left: 0.5rem;
+      left: 0;
       color: var(--accent-orange);
-      font-size: 1.2rem;
-      line-height: 1.6;
+      font-weight: 600;
+      font-style: normal;
     }
 
-    /* Reference Cases Box */
-    .cases-box {
-      background: var(--bg-warm-subtle);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-
-    .case-link-item {
-      display: block;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 1rem;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s ease;
-    }
-
-    .case-link-item:hover {
-      border-color: var(--accent-orange);
-      transform: translateY(-1px);
-    }
-
-    .case-item-title {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      color: var(--text-main);
-      margin-bottom: 0.35rem;
-    }
-
-    .case-item-sub {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    /* Footer */
     footer {
+      margin-top: 6rem;
+      padding-top: 2rem;
       border-top: 1px solid var(--border-subtle);
-      padding-top: 2.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 640px) {
-      body { padding: 2rem 1rem; }
-      h1 { font-size: 2.2rem; }
-      .postulates-grid { grid-template-columns: 1fr; }
+      flex-wrap: wrap;
+      gap: 1rem;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    
-    <!-- Top Nav -->
     <nav>
-      <div class="brand-mark">Human-Centered Feature Design</div>
+      <div class="brand-mark">HUMAN-CENTERED FEATURE DESIGN</div>
       <div class="lang-selector">
         <button class="lang-btn" id="btn-zh" onclick="setLanguage('zh')">中文</button>
         <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">English</button>
       </div>
     </nav>
 
-    <!-- Header (Default English) -->
     <header>
-      <!-- Header Banner & Comparison Switcher -->
       <div style="margin-bottom: 2.5rem;">
         <div style="display: flex; justify-content: flex-end; align-items: center; gap: 0.4rem; margin-bottom: 0.6rem; font-size: 0.75rem; flex-wrap: wrap;">
           <span style="color: var(--text-muted); margin-right: 0.2rem;">Banner 版本:</span>
@@ -355,11 +412,124 @@
       </div>
     </header>
 
-    <!-- Foundational Worldview -->
+    <!-- Section 1: Core Purpose & Anti-Misuse -->
+    <section>
+      <h2 id="txt-p-head">Core Purpose & Guardrails</h2>
+      <p id="txt-p-intro">
+        A situated needs and behavioral inference engine designed to deduce what users genuinely require in specific situations—bridging macro product strategy down to micro interaction states.
+      </p>
+
+      <div class="guardrails-grid">
+        <div class="guardrail-card no">
+          <div class="guardrail-title" id="g-no-title">❌ What It Is NOT</div>
+          <div id="g-no-body">
+            Not for brainstorming random business ideas or designing notification spam, artificial streaks, and gamification to manufacture synthetic engagement.
+          </div>
+        </div>
+        <div class="guardrail-card yes">
+          <div class="guardrail-title" id="g-yes-title">✅ Its True Mission</div>
+          <div id="g-yes-body">
+            To stress-test and refine an already-scoped feature, ensuring its psychological mechanics genuinely fulfill authentic human needs rather than team-centric vanity designs.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Concrete Scenarios -->
+    <section>
+      <h2 id="txt-s-head">When to Use This Framework</h2>
+      <p id="txt-s-intro">
+        Activate this framework during concrete product dilemmas to clarify genuine situated needs:
+      </p>
+
+      <div class="scenario-card">
+        <div class="scenario-badge">SCENARIO 01 · FEATURE CONTRACT</div>
+        <div class="scenario-title" id="s1-title">Defining a Feature's Core Contract</div>
+        <div class="scenario-desc" id="s1-desc">
+          When the feature is decided, but the team instinctively defaults to stacking categories and catalog rows—overwhelming the user with browsing friction.
+        </div>
+        <a href="#case-01" class="scenario-link" id="s1-link">
+          👉 Case 01: Topic Card System — From Category Clutter to Contract Alignment
+        </a>
+      </div>
+
+      <div class="scenario-card">
+        <div class="scenario-badge">SCENARIO 02 · INTERACTION BOUNDARIES</div>
+        <div class="scenario-title" id="s2-title">Deducing Micro-Interaction States</div>
+        <div class="scenario-desc" id="s2-desc">
+          When designing active UI components (expandable cards, transient sheets, active states) and deciding when state should persist versus when it must silently reset to zero debt.
+        </div>
+        <a href="#case-02" class="scenario-link" id="s2-link">
+          👉 Case 02: Dynamic Reading States — Deducing the 3 Situational Boundaries
+        </a>
+      </div>
+
+      <div class="scenario-card">
+        <div class="scenario-badge">SCENARIO 03 · AUDITING EXISTING WORK</div>
+        <div class="scenario-title" id="s3-title">Purging Team Vanity & Pseudo-Designs</div>
+        <div class="scenario-desc" id="s3-desc">
+          When an existing feature looks polished in design reviews, but users churn or express quiet fatigue. Audit whether it restores equilibrium or manufactures artificial anxiety.
+        </div>
+        <span style="font-size: 0.9rem; color: var(--text-muted);" id="s3-foot">Guided by the Three Litmus Tests below.</span>
+      </div>
+    </section>
+
+    <!-- Section 3: AI Coding Agent Integration -->
+    <section>
+      <h2 id="txt-a-head">AI Coding Agent Integration</h2>
+      <p id="txt-a-intro">
+        Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and situated psychological deduction before writing UI code.
+      </p>
+
+      <div class="code-block">
+        <span class="code-comment"># Install into Claude Code globally</span><br />
+        mkdir -p ~/.config/skills/human-centered-feature-design<br />
+        cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md<br /><br />
+        <span class="code-comment"># Or drop SKILL.md directly into your Cursor / Antigravity project rules</span>
+      </div>
+
+      <p id="txt-a-usage" style="font-size: 0.95rem; color: var(--text-muted);">
+        Pairing prompt: <em>"Audit this interactive component using human-centered-feature-design. Is it solving an authentic situated need, or introducing artificial friction?"</em>
+      </p>
+    </section>
+
+    <!-- Section 4: Production Retrospectives -->
+    <section>
+      <h2 id="txt-r-head">Production Retrospectives</h2>
+      <p id="txt-r-intro">Two grounded case studies demonstrating theoretical deduction resolving real commercial UX problems:</p>
+
+      <div class="retro-item" id="case-01">
+        <div class="retro-title" id="r1-title">Case 01: Topic Card System — Content Contract & Context Alignment</div>
+        <div class="retro-meta">
+          <div class="retro-label">Context</div>
+          <div id="r1-ctx">AI language immersion app. Daily topic discovery cards had poor engagement.</div>
+          <div class="retro-label">Diagnosis</div>
+          <div id="r1-diag">Users during dedicated practice already have high motivation; the true bottleneck was decision friction (broad categories felt like unquantifiable homework), breaking the contract between card promise and screen delivery.</div>
+          <div class="retro-label">Refactor</div>
+          <div id="r1-refact">Shifted from categories to strict contract cards ("Talk about yesterday's dream in 3 min"); managed digestive debt instead of static inventory.</div>
+        </div>
+        <a href="examples/01-talk-about-today-cards.md" class="scenario-link">View full retrospective document →</a>
+      </div>
+
+      <div class="retro-item" id="case-02">
+        <div class="retro-title" id="r2-title">Case 02: Dynamic Reading States — The 3 Situational Boundaries</div>
+        <div class="retro-meta">
+          <div class="retro-label">Context</div>
+          <div id="r2-ctx">Long-form reading card with tap-to-expand state.</div>
+          <div class="retro-label">Diagnosis</div>
+          <div id="r2-diag">Card expansion is an ephemeral "transient attentional state," not permanent content. Persisting it leaves cognitive clutter upon return; mechanical auto-collapse cuts off reading flow.</div>
+          <div class="retro-label">Refactor</div>
+          <div id="r2-refact">Established 3 strict situational boundaries: protect flow during micro-interruptions in viewport; silently reset when fully scrolled off-screen; silent reset upon leaving the module.</div>
+        </div>
+        <a href="examples/02-expand-collapse-state.md" class="scenario-link">View full retrospective document →</a>
+      </div>
+    </section>
+
+    <!-- Section 5: The Foundational Worldview -->
     <section>
       <h2 id="txt-w-head">The Foundational Worldview</h2>
       <p id="txt-w-intro">
-        All architectural deductions stem from quiet respect for human psychological rhythms:
+        All situational deductions stem from three immutable assumptions regarding human psychology:
       </p>
 
       <div class="postulates-grid">
@@ -389,78 +559,21 @@
       </div>
     </section>
 
-    <!-- The 3 Modules -->
+    <!-- Section 6: Litmus Tests -->
     <section>
-      <h2 id="txt-m-head">The Three Architectural Modules</h2>
-
-      <div class="module-card">
-        <div class="module-head">
-          <span id="m1-title">Module 1: Motivation Architecture</span>
-          <span class="badge-soft" id="m1-badge">Need Topology</span>
-        </div>
-        <div class="module-body" id="m1-body">
-          Discrete needs trade precision outcomes for trust. Continuous needs trade gentle unfinished momentum for stickiness. Manage digestive debt over inert inventory.
-        </div>
-      </div>
-
-      <div class="module-card">
-        <div class="module-head">
-          <span id="m2-title">Module 2: Sense of Agency</span>
-          <span class="badge-soft" id="m2-badge">6 Touchpoints</span>
-        </div>
-        <div class="module-body" id="m2-body">
-          Spans Perception, Search, Decision, Action, Result Evaluation, and Habit. Subtract friction along the Golden Path; align entry promise strictly with delivery.
-        </div>
-      </div>
-
-      <div class="module-card">
-        <div class="module-head">
-          <span id="m3-title">Module 3: Trigger Design</span>
-          <span class="badge-soft" id="m3-badge">Situated Nudges</span>
-        </div>
-        <div class="module-body" id="m3-body">
-          Deconstruct physical space, temporal baselines, and cognitive bandwidth. Use FBM gap diagnosis to provide precise scaffolding without noise.
-        </div>
-      </div>
-    </section>
-
-    <!-- Golden Questions -->
-    <section>
-      <h2 id="txt-q-head">The Three Golden Questions</h2>
-      <p id="txt-q-intro">Evaluate every product decision against these three immutable criteria:</p>
+      <h2 id="txt-q-head">The Three Litmus Tests</h2>
+      <p id="txt-q-intro">Before any feature ships, audit it ruthlessly against these three filters:</p>
       <ul class="checklist" id="list-questions">
-        <li>Is this design helping the user restore balance, or is it engineering artificial anxiety?</li>
-        <li>Does this design leave the user feeling sovereign and in control, or dragged along by system mechanics?</li>
-        <li>Is this design embedded naturally in the user's real-world context, or is it introducing intrusive noise?</li>
+        <li>Does this return the human to equilibrium, or manufacture synthetic anxiety?</li>
+        <li>Does the user feel sovereign agency, or are they being piloted by system mechanics?</li>
+        <li>Does this embed into the user's authentic situation, or create tone-deaf noise?</li>
       </ul>
     </section>
 
-    <!-- Real-world Case Studies Box -->
-    <section>
-      <h2 id="txt-c-head">Reference Implementations</h2>
-      <p id="txt-c-intro">
-        To demonstrate how this independent framework applies to concrete product decisions, two retrospectives are included:
-      </p>
-
-      <div class="cases-box">
-        <a href="examples/01-talk-about-today-cards.md" class="case-link-item">
-          <div class="case-item-title" id="c1-title">Case 01: Topic Card Redesign — Content Contract & Context Alignment</div>
-          <div class="case-item-sub" id="c1-sub">Diagnosing a content contract fracture and addressing decision agency during deliberate practice sessions.</div>
-        </a>
-
-        <a href="examples/02-expand-collapse-state.md" class="case-link-item">
-          <div class="case-item-title" id="c2-title">Case 02: Dynamic Reading State — The 3 Situational Boundaries</div>
-          <div class="case-item-sub" id="c2-sub">Treating expansion as a temporary attentional state and engineering quiet off-screen resets.</div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
       <div>Human-Centered Feature Design · MIT License</div>
-      <div>A Calm, Principled Product Framework</div>
+      <div>Restoring Human Balance, Not Manufacturing Motivation</div>
     </footer>
-
   </div>
 
   <script>
@@ -469,75 +582,115 @@
     const data = {
       zh: {
         title: "以人为中心的产品功能设计",
-        lead: "让功能重归人的平衡，而非制造虚假的动机。一套基于心理节律与真实掌控感的产品设计心法与留存框架。",
+        lead: "让功能重归人的平衡，而非制造虚假的动机。一套基于心理节律与真实掌控感的产品设计心法与 AI Coding Agent Skill。",
         quote: "“人不是产品的变量，产品才是人的变量。需求来自偏离平衡，产品帮用户重归平衡。产品无法创造需求，只能成为需求的出口。”",
-        wHead: "底层世界观：三个核心假设",
-        wIntro: "所有功能决策的推导，均根植于对人类认知与心理节律的尊重：",
+        
+        pHead: "核心定位与防误用边界",
+        pIntro: "一个“在特定情境下，推理最适合的用户行为与产品解法”的心理机制推理引擎。帮你理清在特定情境下用户真正需要什么，大至系统级功能设计，小至单点交互状态流转。",
+        gNoTitle: "❌ 它绝不是",
+        gNoBody: "不是凭空脑暴商业模式或凭空想功能的点子生成器；更不是为了虚荣指标去搞签到、打卡、积分、弹窗骚扰等制造虚假粘性的增长套路。",
+        gYesTitle: "✅ 它的核心价值",
+        gYesBody: "去检验和打磨一个已经确定要做的功能，保证它在心理机制上是真的在满足用户真实需求，而不是团队自我感觉良好的“伪设计”与虚假粘性。",
+
+        sHead: "具体使用场景（何时使用本框架？）",
+        sIntro: "当你或你的 AI Agent 处于以下情境时，应当调用本框架进行深度推理：",
+        s1Title: "给核心功能定性、界定核心契约",
+        s1Desc: "功能方向确定，但团队容易滑向堆砌分类和库存的惯性，反而给特定时空下的用户增加了挑选与决策阻力。",
+        s1Link: "👉 案例 01：话题卡重构——从类目罗列到契约对齐",
+        s2Title: "推导微观交互的情境边界",
+        s2Desc: "设计具体交互组件（展开收起、暂存、模态）时，推导界面状态在用户切后台、离开视口或完成任务后何时保留、何时隐形重置。",
+        s2Link: "👉 案例 02：动态阅读状态——展开与收起的三重处境边界",
+        s3Title: "现有功能去伪存真，剔除团队自嗨",
+        s3Desc: "交互看起来很炫，但真实用户反感或流失。用框架三大法则穿透表象，自检是帮用户回归平衡还是用冗余机制绑架精力。",
+        s3Foot: "由下方三道黄金检验原则指导执行。",
+
+        aHead: "AI Coding Agent 集成与快速上手",
+        aIntro: "当前的 LLM 在写代码和设计 UI 时极易掉入套路陷阱（默认建议红点、签到弹窗、死板步进器）。把本 Skill 注入 Agent，赋予 AI 顶级产品经理的“克制审美与情境推理能力”，让 AI 在写代码前先自检心理机制。",
+        aUsage: "结对提示词示例：“帮我设计这个卡片的交互方案，先用 human-centered-feature-design 诊断用户在当下情境的心理稳态和能动感，避免制造伪需求。”",
+
+        rHead: "真实业务实战复盘 (Production Retrospectives)",
+        rIntro: "两篇真实商业产品（AI 语言应用）的设计复盘，完整展示情境推理如何解决实际业务痛点：",
+        r1Title: "案例 01：话题卡重构——内容契约与处境的对齐",
+        r1Ctx: "英语学习 App 的今日话题卡片点击率低，团队原以为是卡片不够好看。",
+        r1Diag: "用户在固定练习时段动机充足，真正阻碍是决策摩擦（海量分类像做不完的作业），且入口承诺与交付内容严重脱节（契约断裂）。",
+        r1Refact: "从分类类目重构成明确契约卡；将静态库存逻辑改为消化欠账逻辑；决策摩擦直接归零。",
+        r2Title: "案例 02：动态阅读状态——三重处境边界的拆解",
+        r2Ctx: "长文卡片展开阅读后的状态留存机制。",
+        r2Diag: "展开是临时的阅读注意力状态，而非持久内容。持续保留展开会导致界面混乱；机械定时收起又会切断用户心流。",
+        r2Refact: "推导严密的三重处境边界：视口内微中断坚决不收起；完全离开视口静默平滑复位；离开模块隐形重置。",
+
+        wHead: "底层世界观：为什么这套推理行之有效？",
+        wIntro: "所有的情境推理与功能决策，均立足于关于人类心理特质的三个不可动摇的核心假设：",
         p1Name: "系统稳态 (Homeostasis)",
-        p1Text: "人是自我调节的系统。需求源于偏离平衡，产品只能作为顺畅的出口，无法凭空制造渴望。",
+        p1Text: "人是自我调节的系统。需求产生于偏离平衡，产品无法凭空制造渴望，只能成为排解张力的顺畅管道。",
         p2Name: "主观能动感 (Agency)",
-        p2Text: "人认知脆弱但渴望感知掌控。系统的职责是隐形托住用户，同时把所有成就还给用户。好的系统是隐形的。",
-        p3Name: "处境感知 (Situated)",
-        p3Text: "人永远活在真实处境里。信号是否生效取决于与当下空间、时间、心理负荷的匹配。产品的影响力是借来的。",
-        mHead: "三大设计模块",
-        m1Title: "模块一：动机设计",
-        m1Badge: "需求出口",
-        m1Body: "区分离散型（用结果换信任，追求精准）与连续型（用延续换粘性，平衡点埋下未完成感）。管理欠账张力而非堆积静态库存。",
-        m2Title: "模块二：能力感设计",
-        m2Badge: "六大环节",
-        m2Body: "贯穿感知、搜寻关联、决策、行为、结果评价与习惯。核心路径减去摩擦，承诺严格对齐交付，让用户真切感知“我做到了”。",
-        m3Title: "模块三：触发设计",
-        m3Badge: "处境化激活",
-        m3Body: "解构空间、时间与心理余量。运用 FBM 精准识别行为缺口（动机、能力还是时机），在缺口处投放支架，杜绝机械骚扰。",
-        qHead: "三条黄金检验原则",
-        qIntro: "每个设计决策在上线前，均用这三个问题审视：",
+        p2Text: "人认知脆弱但渴望掌控。系统的最高职责是隐形托举，把所有成就还给用户。好的系统是隐形的。",
+        p3Name: "处境感知 (Situated Context)",
+        p3Text: "人永远活在真实处境里。产品的影响力是借来的，完全取决于与当下空间、时间与心理负荷的匹配度。",
+
+        qHead: "三条黄金检验原则（上线前审查）",
+        qIntro: "在敲定任何功能方案或交互细节前，用这三个问题审视自检：",
         questions: [
           "这个设计是在帮用户回到平衡，还是在制造新的焦虑？",
           "这个设计让用户感觉是自己在掌控，还是被系统牵着走？",
           "这个设计嵌入了用户的真实处境，还是在制造脱离处境的噪音？"
-        ],
-        cHead: "实战参考案例 (Reference Cases)",
-        cIntro: "为了展示框架在实际业务中的具体推导过程，本框架附带了两篇真实产品的设计复盘：",
-        c1Title: "案例 01：话题卡重构——内容契约与处境的对齐",
-        c1Sub: "探讨如何在固定练习时段识别真正需要的能力感支撑，而非盲目制造动机。",
-        c2Title: "案例 02：动态阅读状态——三重处境边界的拆解",
-        c2Sub: "探讨卡片展开作为“临时注意力状态”的生命周期与隐形系统设计。"
+        ]
       },
       en: {
         title: "Human-Centered Feature Design",
         lead: "Restoring human balance, not manufacturing motivation. A calm, principled framework for genuine user agency and natural retention.",
         quote: "“Humans are not variables of products; products are variables of humans. Needs arise from deviations from balance; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”",
+
+        pHead: "Core Purpose & Guardrails",
+        pIntro: "A situated needs and behavioral inference engine designed to deduce what users genuinely require in specific situations—bridging macro product strategy down to micro interaction states.",
+        gNoTitle: "❌ What It Is NOT",
+        gNoBody: "Not for brainstorming random business ideas or designing notification spam, artificial streaks, and gamification to manufacture synthetic engagement.",
+        gYesTitle: "✅ Its True Mission",
+        gYesBody: "To stress-test and refine an already-scoped feature, ensuring its psychological mechanics genuinely fulfill authentic human needs rather than team-centric vanity designs.",
+
+        sHead: "When to Use This Framework",
+        sIntro: "Activate this framework during concrete product dilemmas to clarify genuine situated needs:",
+        s1Title: "Defining a Feature's Core Contract",
+        s1Desc: "When the feature is decided, but the team instinctively defaults to stacking categories and catalog rows—overwhelming the user with browsing friction.",
+        s1Link: "👉 Case 01: Topic Card System — From Category Clutter to Contract Alignment",
+        s2Title: "Deducing Micro-Interaction States",
+        s2Desc: "When designing active UI components (expandable cards, transient sheets, active states) and deciding when state should persist versus when it must silently reset to zero debt.",
+        s2Link: "👉 Case 02: Dynamic Reading States — Deducing the 3 Situational Boundaries",
+        s3Title: "Purging Team Vanity & Pseudo-Designs",
+        s3Desc: "When an existing feature looks polished in design reviews, but users churn or express quiet fatigue. Audit whether it restores equilibrium or manufactures artificial anxiety.",
+        s3Foot: "Guided by the Three Litmus Tests below.",
+
+        aHead: "AI Coding Agent Integration",
+        aIntro: "Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and situated psychological deduction before writing UI code.",
+        aUsage: "Pairing prompt: "Audit this interactive component using human-centered-feature-design. Is it solving an authentic situated need, or introducing artificial friction?"",
+
+        rHead: "Production Retrospectives",
+        rIntro: "Two grounded case studies demonstrating theoretical deduction resolving real commercial UX problems:",
+        r1Title: "Case 01: Topic Card System — Content Contract & Context Alignment",
+        r1Ctx: "AI language immersion app. Daily topic discovery cards had poor engagement.",
+        r1Diag: "Users during dedicated practice already have high motivation; the true bottleneck was decision friction (broad categories felt like unquantifiable homework), breaking the contract between card promise and screen delivery.",
+        r1Refact: "Shifted from categories to strict contract cards ("Talk about yesterday's dream in 3 min"); managed digestive debt instead of static inventory.",
+        r2Title: "Case 02: Dynamic Reading States — The 3 Situational Boundaries",
+        r2Ctx: "Long-form reading card with tap-to-expand state.",
+        r2Diag: "Card expansion is an ephemeral "transient attentional state," not permanent content. Persisting it leaves cognitive clutter upon return; mechanical auto-collapse cuts off reading flow.",
+        r2Refact: "Established 3 strict situational boundaries: protect flow during micro-interruptions in viewport; silently reset when fully scrolled off-screen; silent reset upon leaving the module.",
+
         wHead: "The Foundational Worldview",
-        wIntro: "All architectural deductions stem from quiet respect for human psychological rhythms:",
+        wIntro: "All situational deductions stem from three immutable assumptions regarding human psychology:",
         p1Name: "Human Homeostasis",
         p1Text: "Humans are self-regulating systems. Need stems from disequilibrium. Products cannot invent desire; they only serve as relief valves.",
         p2Name: "Sense of Agency",
         p2Text: "Humans are cognitively fragile yet crave sovereignty. The system scaffolds invisibly and credits the human. The best system is quiet.",
         p3Name: "Situated Context",
         p3Text: "Humans live in concrete situations. Influence is borrowed from contextual fit, never permanently owned by the product.",
-        mHead: "The Three Architectural Modules",
-        m1Title: "Module 1: Motivation Architecture",
-        m1Badge: "Need Topology",
-        m1Body: "Discrete needs trade precision outcomes for trust. Continuous needs trade gentle unfinished momentum for stickiness. Manage digestive debt over inert inventory.",
-        m2Title: "Module 2: Sense of Agency",
-        m2Badge: "6 Touchpoints",
-        m2Body: "Spans Perception, Search, Decision, Action, Result Evaluation, and Habit. Subtract friction along the Golden Path; align entry promise strictly with delivery.",
-        m3Title: "Module 3: Trigger Design",
-        m3Badge: "Situated Nudges",
-        m3Body: "Deconstruct physical space, temporal baselines, and cognitive bandwidth. Use FBM gap diagnosis to provide precise scaffolding without noise.",
+
         qHead: "The Three Litmus Tests",
         qIntro: "Before any feature ships, audit it ruthlessly against these three filters:",
         questions: [
           "Does this return the human to equilibrium, or manufacture synthetic anxiety?",
-          "Does the user feel sovereign agency, or are they being piloted by the system?",
+          "Does the user feel sovereign agency, or are they being piloted by system mechanics?",
           "Does this embed into the user's authentic situation, or create tone-deaf noise?"
-        ],
-        cHead: "Reference Retrospectives",
-        cIntro: "To demonstrate how this framework operates in real production systems, two case studies are included:",
-        c1Title: "Case 01: The Topic Card System",
-        c1Sub: "Contract vs. Category, Inventory vs. Debt, and honoring situated cognitive load.",
-        c2Title: "Case 02: Situated Expansion States",
-        c2Sub: "Card expansion as a transient focus state, governed by three strict situational boundaries."
+        ]
       }
     };
 
@@ -551,9 +704,43 @@
       document.getElementById('txt-title').innerText = d.title;
       document.getElementById('txt-lead').innerText = d.lead;
       document.getElementById('txt-quote').innerText = d.quote;
+
+      document.getElementById('txt-p-head').innerText = d.pHead;
+      document.getElementById('txt-p-intro').innerText = d.pIntro;
+      document.getElementById('g-no-title').innerText = d.gNoTitle;
+      document.getElementById('g-no-body').innerText = d.gNoBody;
+      document.getElementById('g-yes-title').innerText = d.gYesTitle;
+      document.getElementById('g-yes-body').innerText = d.gYesBody;
+
+      document.getElementById('txt-s-head').innerText = d.sHead;
+      document.getElementById('txt-s-intro').innerText = d.sIntro;
+      document.getElementById('s1-title').innerText = d.s1Title;
+      document.getElementById('s1-desc').innerText = d.s1Desc;
+      document.getElementById('s1-link').innerText = d.s1Link;
+      document.getElementById('s2-title').innerText = d.s2Title;
+      document.getElementById('s2-desc').innerText = d.s2Desc;
+      document.getElementById('s2-link').innerText = d.s2Link;
+      document.getElementById('s3-title').innerText = d.s3Title;
+      document.getElementById('s3-desc').innerText = d.s3Desc;
+      document.getElementById('s3-foot').innerText = d.s3Foot;
+
+      document.getElementById('txt-a-head').innerText = d.aHead;
+      document.getElementById('txt-a-intro').innerText = d.aIntro;
+      document.getElementById('txt-a-usage').innerHTML = d.aUsage;
+
+      document.getElementById('txt-r-head').innerText = d.rHead;
+      document.getElementById('txt-r-intro').innerText = d.rIntro;
+      document.getElementById('r1-title').innerText = d.r1Title;
+      document.getElementById('r1-ctx').innerText = d.r1Ctx;
+      document.getElementById('r1-diag').innerText = d.r1Diag;
+      document.getElementById('r1-refact').innerText = d.r1Refact;
+      document.getElementById('r2-title').innerText = d.r2Title;
+      document.getElementById('r2-ctx').innerText = d.r2Ctx;
+      document.getElementById('r2-diag').innerText = d.r2Diag;
+      document.getElementById('r2-refact').innerText = d.r2Refact;
+
       document.getElementById('txt-w-head').innerText = d.wHead;
       document.getElementById('txt-w-intro').innerText = d.wIntro;
-
       document.getElementById('p1-name').innerText = d.p1Name;
       document.getElementById('p1-text').innerText = d.p1Text;
       document.getElementById('p2-name').innerText = d.p2Name;
@@ -561,27 +748,9 @@
       document.getElementById('p3-name').innerText = d.p3Name;
       document.getElementById('p3-text').innerText = d.p3Text;
 
-      document.getElementById('txt-m-head').innerText = d.mHead;
-      document.getElementById('m1-title').innerText = d.m1Title;
-      document.getElementById('m1-badge').innerText = d.m1Badge;
-      document.getElementById('m1-body').innerText = d.m1Body;
-      document.getElementById('m2-title').innerText = d.m2Title;
-      document.getElementById('m2-badge').innerText = d.m2Badge;
-      document.getElementById('m2-body').innerText = d.m2Body;
-      document.getElementById('m3-title').innerText = d.m3Title;
-      document.getElementById('m3-badge').innerText = d.m3Badge;
-      document.getElementById('m3-body').innerText = d.m3Body;
-
       document.getElementById('txt-q-head').innerText = d.qHead;
       document.getElementById('txt-q-intro').innerText = d.qIntro;
       document.getElementById('list-questions').innerHTML = d.questions.map(q => `<li>${q}</li>`).join('');
-
-      document.getElementById('txt-c-head').innerText = d.cHead;
-      document.getElementById('txt-c-intro').innerText = d.cIntro;
-      document.getElementById('c1-title').innerText = d.c1Title;
-      document.getElementById('c1-sub').innerText = d.c1Sub;
-      document.getElementById('c2-title').innerText = d.c2Title;
-      document.getElementById('c2-sub').innerText = d.c2Sub;
     }
 
     function switchBanner(type) {
