@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
+<img src="../assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
 
 <br /><br />
 
@@ -10,7 +10,7 @@
 **让功能重归人的平衡，而非制造虚假的动机。**  
 *一套基于心理节律与真实掌控感的产品设计心法与 AI Coding Agent Skill*
 
-[English](README.md) • [中文说明](README_zh.md) • [Skill 规范 (中文)](SKILL_zh.md) • [Skill Prompt (EN)](SKILL.md) • [实战案例](examples/) • [本地预览](preview.html)
+[English](../README.md) • [中文说明](README_zh.md) • [Skill 规范 (中文)](SKILL_zh.md) • [Skill Prompt (EN)](../SKILL.md) • [实战案例](../examples/)
 
 ---
 
@@ -87,7 +87,7 @@ claude "用 human-centered-feature-design 审查当前分支的代码：卡片�
 本框架附带了两篇真实商业产品（AI 语言沉浸应用）的设计复盘，完整展示了情境推理如何解决实际的烂摊子：
 
 ### 案例 01：话题卡重构——内容契约与处境的对齐
-> 完整复盘文档：[`examples/01-talk-about-today-cards.md`](examples/01-talk-about-today-cards.md)
+> 完整复盘文档：[`examples/01-talk-about-today-cards.md`](../examples/01-talk-about-today-cards.md)
 
 * **起因与伪设计**：团队原本以为“今日话题”卡片点击率低是卡片太丑、配图不够吸引人，准备做更多视觉动效和海量分类推荐。
 * **情境心理诊断**：
@@ -99,7 +99,7 @@ claude "用 human-centered-feature-design 审查当前分支的代码：卡片�
 ---
 
 ### 案例 02：动态阅读状态——三重处境边界的拆解
-> 完整复盘文档：[`examples/02-expand-collapse-state.md`](examples/02-expand-collapse-state.md)
+> 完整复盘文档：[`examples/02-expand-collapse-state.md`](../examples/02-expand-collapse-state.md)
 
 * **起因与伪设计**：为了让用户“完整沉浸阅读”，团队做了卡片点击全量展开，但发现状态一旦持久保留，用户再次回到主屏时面对一堆展开的长卡片极度烦躁；而若机械定时收起，又会切断用户的阅读心流。
 * **情境心理诊断**：
@@ -188,8 +188,7 @@ claude "用 human-centered-feature-design 审查当前分支的代码：卡片�
 ## 规范文件与开源协议
 
 * **`SKILL_zh.md`**：中文完整原始规范（100% 原汁原味）。
-* **`SKILL.md`**：英文规范文件，适合通用 AI Agent 工作流。
-* **`examples/`**：两篇真实业务复盘完整文档。
-* **`preview.html`**：本地双语实时交互体验网页。
+* **`../SKILL.md`**：英文规范文件，适合通用 AI Agent 工作流。
+* **`../examples/`**：两篇真实业务复盘完整文档。
 
-本项目采用 [MIT 许可证](LICENSE)。温润、克制、自由。
+本项目采用 [MIT 许可证](../LICENSE)。温润、克制、自由。

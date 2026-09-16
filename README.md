@@ -10,7 +10,7 @@
 **Restoring human balance, not manufacturing motivation.**  
 *A calm, principled framework for genuine user agency and natural retention.*
 
-[English](README.md) • [中文说明](README_zh.md) • [Skill Prompt (EN)](SKILL.md) • [Skill Prompt (ZH)](SKILL_zh.md) • [Examples](examples/) • [HTML Preview](preview.html)
+[English](README.md) • [中文说明](docs/README_zh.md) • [Skill Prompt (EN)](SKILL.md) • [Skill Prompt (ZH)](docs/SKILL_zh.md) • [Examples](examples/)
 
 ---
 
@@ -182,10 +182,10 @@ Before deploying any feature or interaction, audit it against these three filter
 ---
 
 ## Specifications & License
-
-* **`SKILL_zh.md`**: Complete Chinese specification (100% original text).
-* **`SKILL.md`**: English specification for international AI workflows.
+ 
+* **`SKILL.md`**: Canonical English specification for coding agents and AI workflows.
+* **`docs/SKILL_zh.md`**: Complete Chinese prompt specification (100% original text).
+* **`docs/README_zh.md`**: Full Chinese documentation and usage guide.
 * **`examples/`**: Deep dive retrospective case studies.
-* **`preview.html`**: Zero-dependency live interactive preview.
 
 Released under the [MIT License](LICENSE). Calm, principled, and free.
