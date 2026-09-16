@@ -7,14 +7,15 @@
 # Human-Centered Feature Design
 ### `human-centered-feature-design`
 
-**A calm, principled framework for continuous feature engagement and situated retention.**  
-*Rooted in human homeostasis, a sense of agency, and situated context.*
+**Restoring human balance, not manufacturing motivation.**  
+*A calm, principled framework for genuine user agency and natural retention.*
 
 [English](README.md) • [中文说明](README_zh.md) • [Skill Prompt (EN)](SKILL.md) • [Skill Prompt (ZH)](SKILL_zh.md) • [Examples](examples/) • [HTML Preview](preview.html)
 
 ---
 
-### *"Humans are not variables of products; products are variables of humans."*
+### *"Humans are not variables of products; products are variables of humans."*  
+Needs arise from deviations from balance; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.
 
 ---
 

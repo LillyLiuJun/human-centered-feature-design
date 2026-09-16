@@ -7,15 +7,15 @@
 # Human-Centered Feature Design
 ### 以人为中心的产品功能设计
 
-**一套基于人类心理稳态、主观能动感与处境感知的持续使用与留存设计框架**  
-*独立、自洽、普适的通用产品功能设计心法与 AI Coding Agent Skill*
+**让功能重归人的平衡，而非制造虚假的动机。**  
+*一套基于心理节律与真实掌控感的产品设计心法与 AI Coding Agent Skill*
 
 [English](README.md) • [中文说明](README_zh.md) • [Skill 规范 (中文)](SKILL_zh.md) • [Skill Prompt (EN)](SKILL.md) • [实战案例](examples/) • [本地预览](preview.html)
 
 ---
 
 ### **“人不是产品的变量，产品才是人的变量。”**  
-需求来自偏离稳态，产品帮用户回到平衡。产品无法创造需求，只能成为需求的出口。
+需求来自偏离平衡，产品帮用户重归平衡。产品无法创造需求，只能成为需求的出口。
 
 ---
 

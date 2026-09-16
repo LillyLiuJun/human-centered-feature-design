@@ -333,10 +333,10 @@
       <!-- Header Banner & Comparison Switcher -->
       <div style="margin-bottom: 2.5rem;">
         <div style="display: flex; justify-content: flex-end; align-items: center; gap: 0.4rem; margin-bottom: 0.6rem; font-size: 0.75rem; flex-wrap: wrap;">
-          <span style="color: var(--text-muted); margin-right: 0.2rem;">底色对比:</span>
-          <button id="btn-banner-warm" onclick="switchBanner('warm')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--accent-orange); background: var(--accent-orange); color: white; cursor: pointer; font-size: 0.75rem; font-weight: 500;">🌟 微暖通透白 (平衡版·推荐)</button>
-          <button id="btn-banner-pure" onclick="switchBanner('pure')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">❄️ 冷调纯白</button>
-          <button id="btn-banner-orig" onclick="switchBanner('orig')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">📄 原版 (灰度底)</button>
+          <span style="color: var(--text-muted); margin-right: 0.2rem;">Banner 版本:</span>
+          <button id="btn-banner-warm" onclick="switchBanner('warm')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--accent-orange); background: var(--accent-orange); color: white; cursor: pointer; font-size: 0.75rem; font-weight: 500;">🌟 方案一副文案 (微暖通透·推荐)</button>
+          <button id="btn-banner-title" onclick="switchBanner('title')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">🔤 Title Case 版</button>
+          <button id="btn-banner-orig" onclick="switchBanner('orig')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">📄 对标插画原图 (旧文案)</button>
         </div>
         <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid var(--border-subtle);">
           <img id="banner-img" src="assets/readme-banner.png" alt="Human-Centered Feature Design Banner" style="width: 100%; display: block; height: auto;" />
@@ -345,12 +345,12 @@
 
       <h1 id="txt-title">Human-Centered Feature Design</h1>
       <p class="lead-text" id="txt-lead">
-        A calm, principled framework for continuous feature engagement and situated retention. Rooted in human homeostasis and sovereign user agency.
+        Restoring human balance, not manufacturing motivation. A calm, principled framework for genuine user agency and natural retention.
       </p>
       
       <div class="quote-card">
         <p id="txt-quote">
-          “Humans are not variables of products; products are variables of humans. Needs arise from deviations from homeostasis; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”
+          “Humans are not variables of products; products are variables of humans. Needs arise from deviations from balance; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”
         </p>
       </div>
     </header>
@@ -464,11 +464,13 @@
   </div>
 
   <script>
+    let currentLang = 'en';
+
     const data = {
       zh: {
         title: "以人为中心的产品功能设计",
-        lead: "一套独立、自洽、普适的持续使用与留存设计框架。回归人类心理稳态，把掌控感还给用户。",
-        quote: "“人不是产品的变量，产品才是人的变量。需求来自偏离稳态，产品帮用户回到平衡。产品无法创造需求，只能成为需求的出口。”",
+        lead: "让功能重归人的平衡，而非制造虚假的动机。一套基于心理节律与真实掌控感的产品设计心法与留存框架。",
+        quote: "“人不是产品的变量，产品才是人的变量。需求来自偏离平衡，产品帮用户重归平衡。产品无法创造需求，只能成为需求的出口。”",
         wHead: "底层世界观：三个核心假设",
         wIntro: "所有功能决策的推导，均根植于对人类认知与心理节律的尊重：",
         p1Name: "系统稳态 (Homeostasis)",
@@ -503,8 +505,8 @@
       },
       en: {
         title: "Human-Centered Feature Design",
-        lead: "A calm, principled framework for continuous feature engagement and situated retention. Rooted in human homeostasis and sovereign user agency.",
-        quote: "“Humans are not variables of products; products are variables of humans. Needs arise from deviations from homeostasis; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”",
+        lead: "Restoring human balance, not manufacturing motivation. A calm, principled framework for genuine user agency and natural retention.",
+        quote: "“Humans are not variables of products; products are variables of humans. Needs arise from deviations from balance; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”",
         wHead: "The Foundational Worldview",
         wIntro: "All architectural deductions stem from quiet respect for human psychological rhythms:",
         p1Name: "Human Homeostasis",
@@ -523,27 +525,29 @@
         m3Title: "Module 3: Trigger Design",
         m3Badge: "Situated Nudges",
         m3Body: "Deconstruct physical space, temporal baselines, and cognitive bandwidth. Use FBM gap diagnosis to provide precise scaffolding without noise.",
-        qHead: "The Three Golden Questions",
-        qIntro: "Evaluate every product decision against these three immutable criteria:",
+        qHead: "The Three Litmus Tests",
+        qIntro: "Before any feature ships, audit it ruthlessly against these three filters:",
         questions: [
-          "Is this design helping the user restore balance, or is it engineering artificial anxiety?",
-          "Does this design leave the user feeling sovereign and in control, or dragged around by system mechanics?",
-          "Is this design embedded naturally in the user's real-world context, or is it introducing intrusive noise?"
+          "Does this return the human to equilibrium, or manufacture synthetic anxiety?",
+          "Does the user feel sovereign agency, or are they being piloted by the system?",
+          "Does this embed into the user's authentic situation, or create tone-deaf noise?"
         ],
-        cHead: "Reference Implementations",
-        cIntro: "To demonstrate how this independent framework applies to concrete product decisions, two retrospectives are included:",
-        c1Title: "Case 01: Topic Card Redesign — Content Contract & Context Alignment",
-        c1Sub: "Diagnosing a content contract fracture and addressing decision agency during deliberate practice sessions.",
-        c2Title: "Case 02: Dynamic Reading State — The 3 Situational Boundaries",
-        c2Sub: "Treating expansion as a temporary attentional state and engineering quiet off-screen resets."
+        cHead: "Reference Retrospectives",
+        cIntro: "To demonstrate how this framework operates in real production systems, two case studies are included:",
+        c1Title: "Case 01: The Topic Card System",
+        c1Sub: "Contract vs. Category, Inventory vs. Debt, and honoring situated cognitive load.",
+        c2Title: "Case 02: Situated Expansion States",
+        c2Sub: "Card expansion as a transient focus state, governed by three strict situational boundaries."
       }
     };
 
     function setLanguage(lang) {
+      currentLang = lang;
+      const d = data[lang];
+
       document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-      const d = data[lang];
       document.getElementById('txt-title').innerText = d.title;
       document.getElementById('txt-lead').innerText = d.lead;
       document.getElementById('txt-quote').innerText = d.quote;
@@ -583,11 +587,10 @@
     function switchBanner(type) {
       const img = document.getElementById('banner-img');
       const btnWarm = document.getElementById('btn-banner-warm');
-      const btnPure = document.getElementById('btn-banner-pure');
+      const btnTitle = document.getElementById('btn-banner-title');
       const btnOrig = document.getElementById('btn-banner-orig');
 
-      // reset all buttons
-      [btnWarm, btnPure, btnOrig].forEach(btn => {
+      [btnWarm, btnTitle, btnOrig].forEach(btn => {
         btn.style.background = 'var(--bg-card)';
         btn.style.color = 'var(--text-muted)';
         btn.style.borderColor = 'var(--border-subtle)';
@@ -598,13 +601,13 @@
         btnWarm.style.background = 'var(--accent-orange)';
         btnWarm.style.color = 'white';
         btnWarm.style.borderColor = 'var(--accent-orange)';
-      } else if (type === 'pure') {
-        img.src = 'assets/readme-banner-purewhite.png';
-        btnPure.style.background = 'var(--accent-orange)';
-        btnPure.style.color = 'white';
-        btnPure.style.borderColor = 'var(--accent-orange)';
+      } else if (type === 'title') {
+        img.src = 'assets/readme-banner-titlecase.png';
+        btnTitle.style.background = 'var(--accent-orange)';
+        btnTitle.style.color = 'white';
+        btnTitle.style.borderColor = 'var(--accent-orange)';
       } else {
-        img.src = 'assets/readme-banner-original.png';
+        img.src = 'assets/readme-banner-option1-original-bg.png';
         btnOrig.style.background = 'var(--accent-orange)';
         btnOrig.style.color = 'white';
         btnOrig.style.borderColor = 'var(--accent-orange)';
