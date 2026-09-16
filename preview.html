@@ -130,7 +130,7 @@
     }
 
     section {
-      margin-bottom: 4.5rem;
+      margin-bottom: 4rem;
     }
 
     h2 {
@@ -151,114 +151,66 @@
       font-family: var(--font-mono);
     }
 
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 1.75rem 0 0.75rem 0;
+    }
+
     p {
       margin-bottom: 1.25rem;
       font-size: 1.05rem;
     }
 
-    /* Purpose & Guardrails */
     .callout-box {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
       padding: 1.5rem;
-      margin-bottom: 2rem;
+      margin: 1.5rem 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
 
-    .callout-header {
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent-orange);
-      margin-bottom: 0.75rem;
+    .scenario-list {
+      list-style: none;
+      margin: 1rem 0;
     }
 
-    .guardrails-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 640px) {
-      .guardrails-grid { grid-template-columns: 1fr; }
-    }
-
-    .guardrail-card {
+    .scenario-item {
+      padding: 0.85rem 1rem;
       background: var(--bg-warm-subtle);
-      padding: 1.25rem;
       border-radius: 8px;
-      font-size: 0.95rem;
-    }
-
-    .guardrail-card.no { border-left: 3px solid #D9534F; }
-    .guardrail-card.yes { border-left: 3px solid var(--accent-orange); }
-
-    .guardrail-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    /* Scenarios */
-    .scenario-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.25rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .scenario-card:hover {
-      border-color: var(--border-focus);
-      transform: translateY(-2px);
-    }
-
-    .scenario-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      font-weight: 600;
-      color: var(--accent-orange);
-      background: var(--accent-orange-soft);
-      padding: 0.15rem 0.55rem;
-      border-radius: 4px;
       margin-bottom: 0.75rem;
+      font-size: 0.98rem;
     }
 
-    .scenario-title {
-      font-size: 1.15rem;
+    .scenario-item-title {
       font-weight: 600;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
-    .scenario-desc {
-      font-size: 0.98rem;
+    .scenario-item-prompt {
       color: var(--text-body);
-      margin-bottom: 0.75rem;
+      font-style: italic;
+      margin-bottom: 0.35rem;
     }
 
-    .scenario-link {
+    .scenario-item-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.3rem;
       color: var(--accent-orange);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
       text-decoration: none;
-      border-bottom: 1px dashed var(--accent-orange);
-      padding-bottom: 1px;
     }
 
-    .scenario-link:hover {
-      border-bottom-style: solid;
+    .scenario-item-link:hover {
+      text-decoration: underline;
     }
 
-    /* Code Block */
     .code-block {
       background: #23201D;
       color: #E6E1DC;
@@ -267,7 +219,7 @@
       font-family: var(--font-mono);
       font-size: 0.88rem;
       line-height: 1.6;
-      margin: 1.5rem 0;
+      margin: 1.25rem 0;
       overflow-x: auto;
     }
 
@@ -275,7 +227,6 @@
       color: #8C867E;
     }
 
-    /* Retrospectives */
     .retro-item {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
@@ -293,9 +244,9 @@
 
     .retro-meta {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 90px 1fr;
       gap: 0.5rem 1rem;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       margin-bottom: 1rem;
     }
 
@@ -304,7 +255,6 @@
       color: var(--text-muted);
     }
 
-    /* Postulates Grid */
     .postulates-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -340,7 +290,6 @@
       line-height: 1.65;
     }
 
-    /* Checklist */
     .checklist {
       list-style: none;
       margin: 1.5rem 0;
@@ -390,7 +339,7 @@
     <header>
       <div style="margin-bottom: 2.5rem;">
         <div style="display: flex; justify-content: flex-end; align-items: center; gap: 0.4rem; margin-bottom: 0.6rem; font-size: 0.75rem; flex-wrap: wrap;">
-          <span style="color: var(--text-muted); margin-right: 0.2rem;">Banner 版本:</span>
+          <span style="color: var(--text-muted); margin-right: 0.2rem;">Banner:</span>
           <button id="btn-banner-warm" onclick="switchBanner('warm')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--accent-orange); background: var(--accent-orange); color: white; cursor: pointer; font-size: 0.75rem; font-weight: 500;">🌟 方案一副文案 (微暖通透·推荐)</button>
           <button id="btn-banner-title" onclick="switchBanner('title')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">🔤 Title Case 版</button>
           <button id="btn-banner-orig" onclick="switchBanner('orig')" style="padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border-subtle); background: var(--bg-card); color: var(--text-muted); cursor: pointer; font-size: 0.75rem; font-weight: 500;">📄 对标插画原图 (旧文案)</button>
@@ -412,88 +361,53 @@
       </div>
     </header>
 
-    <!-- Section 1: Core Purpose & Anti-Misuse -->
+    <!-- Unified Core Purpose & Usage Scenarios -->
     <section>
-      <h2 id="txt-p-head">Core Purpose & Guardrails</h2>
-      <p id="txt-p-intro">
-        A situated needs and behavioral inference engine designed to deduce what users genuinely require in specific situations—bridging macro product strategy down to micro interaction states.
+      <h2 id="txt-p-head">Core Purpose & Usage Scenarios</h2>
+      <p id="txt-p-body1">
+        <strong>Human-Centered Feature Design</strong> is a reasoning framework designed to <strong>test and refine features to ensure they genuinely fulfill authentic user needs</strong>.
+      </p>
+      <p id="txt-p-body2" style="color: var(--text-body);">
+        It deduces what users actually require in specific situations—from macro feature definitions down to micro interaction details—grounding product solutions in human psychology rather than team-centric vanity or synthetic stickiness.
       </p>
 
-      <div class="guardrails-grid">
-        <div class="guardrail-card no">
-          <div class="guardrail-title" id="g-no-title">❌ What It Is NOT</div>
-          <div id="g-no-body">
-            Not for brainstorming random business ideas or designing notification spam, artificial streaks, and gamification to manufacture synthetic engagement.
-          </div>
+      <h3 id="txt-trig-head">Common Prompt Triggers</h3>
+      <div class="scenario-list">
+        <div class="scenario-item">
+          <div class="scenario-item-title" id="s1-t">Defining Core Contract (Avoiding Catalog Clutter)</div>
+          <div class="scenario-item-prompt" id="s1-p">"Help me deduce the delivery contract for this feature to avoid overwhelming users with browsing debt."</div>
+          <a href="#case-01" class="scenario-item-link" id="s1-l">➔ Case 01: Topic Card System</a>
         </div>
-        <div class="guardrail-card yes">
-          <div class="guardrail-title" id="g-yes-title">✅ Its True Mission</div>
-          <div id="g-yes-body">
-            To stress-test and refine an already-scoped feature, ensuring its psychological mechanics genuinely fulfill authentic human needs rather than team-centric vanity designs.
-          </div>
+
+        <div class="scenario-item">
+          <div class="scenario-item-title" id="s2-t">Deducing Micro-Interaction Boundaries</div>
+          <div class="scenario-item-prompt" id="s2-p">"Deduce the lifecycle boundaries for this expandable card: when to maintain state and when to silently reset off-screen."</div>
+          <a href="#case-02" class="scenario-item-link" id="s2-l">➔ Case 02: Dynamic Reading States</a>
+        </div>
+
+        <div class="scenario-item">
+          <div class="scenario-item-title" id="s3-t">Auditing Existing Work to Purge Vanity</div>
+          <div class="scenario-item-prompt" id="s3-p">"Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation."</div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Concrete Scenarios -->
+    <!-- Quick Start & Agent Integration -->
     <section>
-      <h2 id="txt-s-head">When to Use This Framework</h2>
-      <p id="txt-s-intro">
-        Activate this framework during concrete product dilemmas to clarify genuine situated needs:
-      </p>
-
-      <div class="scenario-card">
-        <div class="scenario-badge">SCENARIO 01 · FEATURE CONTRACT</div>
-        <div class="scenario-title" id="s1-title">Defining a Feature's Core Contract</div>
-        <div class="scenario-desc" id="s1-desc">
-          When the feature is decided, but the team instinctively defaults to stacking categories and catalog rows—overwhelming the user with browsing friction.
-        </div>
-        <a href="#case-01" class="scenario-link" id="s1-link">
-          👉 Case 01: Topic Card System — From Category Clutter to Contract Alignment
-        </a>
-      </div>
-
-      <div class="scenario-card">
-        <div class="scenario-badge">SCENARIO 02 · INTERACTION BOUNDARIES</div>
-        <div class="scenario-title" id="s2-title">Deducing Micro-Interaction States</div>
-        <div class="scenario-desc" id="s2-desc">
-          When designing active UI components (expandable cards, transient sheets, active states) and deciding when state should persist versus when it must silently reset to zero debt.
-        </div>
-        <a href="#case-02" class="scenario-link" id="s2-link">
-          👉 Case 02: Dynamic Reading States — Deducing the 3 Situational Boundaries
-        </a>
-      </div>
-
-      <div class="scenario-card">
-        <div class="scenario-badge">SCENARIO 03 · AUDITING EXISTING WORK</div>
-        <div class="scenario-title" id="s3-title">Purging Team Vanity & Pseudo-Designs</div>
-        <div class="scenario-desc" id="s3-desc">
-          When an existing feature looks polished in design reviews, but users churn or express quiet fatigue. Audit whether it restores equilibrium or manufactures artificial anxiety.
-        </div>
-        <span style="font-size: 0.9rem; color: var(--text-muted);" id="s3-foot">Guided by the Three Litmus Tests below.</span>
-      </div>
-    </section>
-
-    <!-- Section 3: AI Coding Agent Integration -->
-    <section>
-      <h2 id="txt-a-head">AI Coding Agent Integration</h2>
+      <h2 id="txt-a-head">Quick Start & AI Coding Agent Integration</h2>
       <p id="txt-a-intro">
-        Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and situated psychological deduction before writing UI code.
+        Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and psychological deduction before generating UI code.
       </p>
 
       <div class="code-block">
-        <span class="code-comment"># Install into Claude Code globally</span><br />
+        <span class="code-comment"># Global installation for Claude Code</span><br />
         mkdir -p ~/.config/skills/human-centered-feature-design<br />
         cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md<br /><br />
         <span class="code-comment"># Or drop SKILL.md directly into your Cursor / Antigravity project rules</span>
       </div>
-
-      <p id="txt-a-usage" style="font-size: 0.95rem; color: var(--text-muted);">
-        Pairing prompt: <em>"Audit this interactive component using human-centered-feature-design. Is it solving an authentic situated need, or introducing artificial friction?"</em>
-      </p>
     </section>
 
-    <!-- Section 4: Production Retrospectives -->
+    <!-- Production Retrospectives -->
     <section>
       <h2 id="txt-r-head">Production Retrospectives</h2>
       <p id="txt-r-intro">Two grounded case studies demonstrating theoretical deduction resolving real commercial UX problems:</p>
@@ -508,7 +422,7 @@
           <div class="retro-label">Refactor</div>
           <div id="r1-refact">Shifted from categories to strict contract cards ("Talk about yesterday's dream in 3 min"); managed digestive debt instead of static inventory.</div>
         </div>
-        <a href="examples/01-talk-about-today-cards.md" class="scenario-link">View full retrospective document →</a>
+        <a href="examples/01-talk-about-today-cards.md" class="scenario-item-link">View full retrospective document →</a>
       </div>
 
       <div class="retro-item" id="case-02">
@@ -521,11 +435,11 @@
           <div class="retro-label">Refactor</div>
           <div id="r2-refact">Established 3 strict situational boundaries: protect flow during micro-interruptions in viewport; silently reset when fully scrolled off-screen; silent reset upon leaving the module.</div>
         </div>
-        <a href="examples/02-expand-collapse-state.md" class="scenario-link">View full retrospective document →</a>
+        <a href="examples/02-expand-collapse-state.md" class="scenario-item-link">View full retrospective document →</a>
       </div>
     </section>
 
-    <!-- Section 5: The Foundational Worldview -->
+    <!-- Foundational Worldview -->
     <section>
       <h2 id="txt-w-head">The Foundational Worldview</h2>
       <p id="txt-w-intro">
@@ -559,7 +473,7 @@
       </div>
     </section>
 
-    <!-- Section 6: Litmus Tests -->
+    <!-- Litmus Tests -->
     <section>
       <h2 id="txt-q-head">The Three Litmus Tests</h2>
       <p id="txt-q-intro">Before any feature ships, audit it ruthlessly against these three filters:</p>
@@ -584,29 +498,25 @@
         title: "以人为中心的产品功能设计",
         lead: "让功能重归人的平衡，而非制造虚假的动机。一套基于心理节律与真实掌控感的产品设计心法与 AI Coding Agent Skill。",
         quote: "“人不是产品的变量，产品才是人的变量。需求来自偏离平衡，产品帮用户重归平衡。产品无法创造需求，只能成为需求的出口。”",
-        
-        pHead: "核心定位与防误用边界",
-        pIntro: "一个“在特定情境下，推理最适合的用户行为与产品解法”的心理机制推理引擎。帮你理清在特定情境下用户真正需要什么，大至系统级功能设计，小至单点交互状态流转。",
-        gNoTitle: "❌ 它绝不是",
-        gNoBody: "不是凭空脑暴商业模式或凭空想功能的点子生成器；更不是为了虚荣指标去搞签到、打卡、积分、弹窗骚扰等制造虚假粘性的增长套路。",
-        gYesTitle: "✅ 它的核心价值",
-        gYesBody: "去检验和打磨一个已经确定要做的功能，保证它在心理机制上是真的在满足用户真实需求，而不是团队自我感觉良好的“伪设计”与虚假粘性。",
 
-        sHead: "具体使用场景（何时使用本框架？）",
-        sIntro: "当你或你的 AI Agent 处于以下情境时，应当调用本框架进行深度推理：",
-        s1Title: "给核心功能定性、界定核心契约",
-        s1Desc: "功能方向确定，但团队容易滑向堆砌分类和库存的惯性，反而给特定时空下的用户增加了挑选与决策阻力。",
-        s1Link: "👉 案例 01：话题卡重构——从类目罗列到契约对齐",
-        s2Title: "推导微观交互的情境边界",
-        s2Desc: "设计具体交互组件（展开收起、暂存、模态）时，推导界面状态在用户切后台、离开视口或完成任务后何时保留、何时隐形重置。",
-        s2Link: "👉 案例 02：动态阅读状态——展开与收起的三重处境边界",
-        s3Title: "现有功能去伪存真，剔除团队自嗨",
-        s3Desc: "交互看起来很炫，但真实用户反感或流失。用框架三大法则穿透表象，自检是帮用户回归平衡还是用冗余机制绑架精力。",
-        s3Foot: "由下方三道黄金检验原则指导执行。",
+        pHead: "核心定位与使用场景",
+        pBody1: "<strong>Human-Centered Feature Design</strong> 是一个用来<strong>检验和打磨一个功能是否真的在满足用户真实需求</strong>的推理框架。",
+        pBody2: "它帮你理清在特定情境下用户真正需要什么，大至功能定义、小至交互细节，推导出真正契合人性心理机制的产品解法——<strong>确保它是真正能解决问题的好设计，而不是团队自我感觉良好、制造虚假粘性的伪设计。</strong>",
+        trigHead: "常见触发场景（提示词示例）",
 
-        aHead: "AI Coding Agent 集成与快速上手",
+        s1T: "界定核心契约（避免类目堆砌）",
+        s1P: "“用本框架帮我推演这个功能的交付契约，避免堆砌海量库存造成决策负担。”",
+        s1L: "➔ 案例 01：话题卡重构",
+
+        s2T: "推导微观交互的情境边界",
+        s2P: "“推演卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位。”",
+        s2L: "➔ 案例 02：动态阅读状态",
+
+        s3T: "现有功能去伪存真",
+        s3P: "“用本框架的三大黄金法则审查当前方案，剔除团队自嗨与虚假动机。”",
+
+        aHead: "快速上手与 AI Coding Agent 集成",
         aIntro: "当前的 LLM 在写代码和设计 UI 时极易掉入套路陷阱（默认建议红点、签到弹窗、死板步进器）。把本 Skill 注入 Agent，赋予 AI 顶级产品经理的“克制审美与情境推理能力”，让 AI 在写代码前先自检心理机制。",
-        aUsage: "结对提示词示例：“帮我设计这个卡片的交互方案，先用 human-centered-feature-design 诊断用户在当下情境的心理稳态和能动感，避免制造伪需求。”",
 
         rHead: "真实业务实战复盘 (Production Retrospectives)",
         rIntro: "两篇真实商业产品（AI 语言应用）的设计复盘，完整展示情境推理如何解决实际业务痛点：",
@@ -641,28 +551,24 @@
         lead: "Restoring human balance, not manufacturing motivation. A calm, principled framework for genuine user agency and natural retention.",
         quote: "“Humans are not variables of products; products are variables of humans. Needs arise from deviations from balance; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.”",
 
-        pHead: "Core Purpose & Guardrails",
-        pIntro: "A situated needs and behavioral inference engine designed to deduce what users genuinely require in specific situations—bridging macro product strategy down to micro interaction states.",
-        gNoTitle: "❌ What It Is NOT",
-        gNoBody: "Not for brainstorming random business ideas or designing notification spam, artificial streaks, and gamification to manufacture synthetic engagement.",
-        gYesTitle: "✅ Its True Mission",
-        gYesBody: "To stress-test and refine an already-scoped feature, ensuring its psychological mechanics genuinely fulfill authentic human needs rather than team-centric vanity designs.",
+        pHead: "Core Purpose & Usage Scenarios",
+        pBody1: "<strong>Human-Centered Feature Design</strong> is a reasoning framework designed to <strong>test and refine features to ensure they genuinely fulfill authentic user needs</strong>.",
+        pBody2: "It deduces what users actually require in specific situations—from macro feature definitions down to micro interaction details—grounding product solutions in human psychology rather than team-centric vanity or synthetic stickiness.",
+        trigHead: "Common Prompt Triggers",
 
-        sHead: "When to Use This Framework",
-        sIntro: "Activate this framework during concrete product dilemmas to clarify genuine situated needs:",
-        s1Title: "Defining a Feature's Core Contract",
-        s1Desc: "When the feature is decided, but the team instinctively defaults to stacking categories and catalog rows—overwhelming the user with browsing friction.",
-        s1Link: "👉 Case 01: Topic Card System — From Category Clutter to Contract Alignment",
-        s2Title: "Deducing Micro-Interaction States",
-        s2Desc: "When designing active UI components (expandable cards, transient sheets, active states) and deciding when state should persist versus when it must silently reset to zero debt.",
-        s2Link: "👉 Case 02: Dynamic Reading States — Deducing the 3 Situational Boundaries",
-        s3Title: "Purging Team Vanity & Pseudo-Designs",
-        s3Desc: "When an existing feature looks polished in design reviews, but users churn or express quiet fatigue. Audit whether it restores equilibrium or manufactures artificial anxiety.",
-        s3Foot: "Guided by the Three Litmus Tests below.",
+        s1T: "Defining Core Contract (Avoiding Catalog Clutter)",
+        s1P: ""Help me deduce the delivery contract for this feature to avoid overwhelming users with browsing debt."",
+        s1L: "➔ Case 01: Topic Card System",
 
-        aHead: "AI Coding Agent Integration",
-        aIntro: "Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and situated psychological deduction before writing UI code.",
-        aUsage: "Pairing prompt: "Audit this interactive component using human-centered-feature-design. Is it solving an authentic situated need, or introducing artificial friction?"",
+        s2T: "Deducing Micro-Interaction Boundaries",
+        s2P: ""Deduce the lifecycle boundaries for this expandable card: when to maintain state and when to silently reset off-screen."",
+        s2L: "➔ Case 02: Dynamic Reading States",
+
+        s3T: "Auditing Existing Work to Purge Vanity",
+        s3P: ""Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation."",
+
+        aHead: "Quick Start & AI Coding Agent Integration",
+        aIntro: "Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and psychological deduction before generating UI code.",
 
         rHead: "Production Retrospectives",
         rIntro: "Two grounded case studies demonstrating theoretical deduction resolving real commercial UX problems:",
@@ -706,27 +612,21 @@
       document.getElementById('txt-quote').innerText = d.quote;
 
       document.getElementById('txt-p-head').innerText = d.pHead;
-      document.getElementById('txt-p-intro').innerText = d.pIntro;
-      document.getElementById('g-no-title').innerText = d.gNoTitle;
-      document.getElementById('g-no-body').innerText = d.gNoBody;
-      document.getElementById('g-yes-title').innerText = d.gYesTitle;
-      document.getElementById('g-yes-body').innerText = d.gYesBody;
+      document.getElementById('txt-p-body1').innerHTML = d.pBody1;
+      document.getElementById('txt-p-body2').innerHTML = d.pBody2;
+      document.getElementById('txt-trig-head').innerText = d.trigHead;
 
-      document.getElementById('txt-s-head').innerText = d.sHead;
-      document.getElementById('txt-s-intro').innerText = d.sIntro;
-      document.getElementById('s1-title').innerText = d.s1Title;
-      document.getElementById('s1-desc').innerText = d.s1Desc;
-      document.getElementById('s1-link').innerText = d.s1Link;
-      document.getElementById('s2-title').innerText = d.s2Title;
-      document.getElementById('s2-desc').innerText = d.s2Desc;
-      document.getElementById('s2-link').innerText = d.s2Link;
-      document.getElementById('s3-title').innerText = d.s3Title;
-      document.getElementById('s3-desc').innerText = d.s3Desc;
-      document.getElementById('s3-foot').innerText = d.s3Foot;
+      document.getElementById('s1-t').innerText = d.s1T;
+      document.getElementById('s1-p').innerText = d.s1P;
+      document.getElementById('s1-l').innerText = d.s1L;
+      document.getElementById('s2-t').innerText = d.s2T;
+      document.getElementById('s2-p').innerText = d.s2P;
+      document.getElementById('s2-l').innerText = d.s2L;
+      document.getElementById('s3-t').innerText = d.s3T;
+      document.getElementById('s3-p').innerText = d.s3P;
 
       document.getElementById('txt-a-head').innerText = d.aHead;
       document.getElementById('txt-a-intro').innerText = d.aIntro;
-      document.getElementById('txt-a-usage').innerHTML = d.aUsage;
 
       document.getElementById('txt-r-head').innerText = d.rHead;
       document.getElementById('txt-r-intro').innerText = d.rIntro;

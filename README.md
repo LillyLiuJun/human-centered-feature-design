@@ -21,48 +21,19 @@ Needs arise from deviations from balance; products serve as vehicles to restore 
 
 </div>
 
-## Core Purpose: What Is This Framework?
+## Core Purpose & Usage Scenarios
 
-**Human-Centered Feature Design** is a **situated needs and behavioral inference engine**.
+**Human-Centered Feature Design** is a reasoning framework designed to **test and refine features to ensure they genuinely fulfill authentic user needs**.
 
-In a single sentence: **It deduces what users genuinely need in specific situations—bridging macro product strategy down to micro interaction states.**
+It deduces what users actually require in specific situations—from macro feature definitions down to micro interaction details—grounding product solutions in human psychology rather than team-centric vanity or synthetic stickiness.
 
-Its analytical power cuts across scales:
-* **System-level feature design**: Defining the psychological contract of a feature and clarifying its delivery format (is it relieving cognitive friction, or piling on new digestive debt?);
-* **Single-point interaction design**: Deducing the transient lifecycle of an active component (when a reading card expands, under what exact conditions should it stay open, and when should it silently reset?).
+### Common Prompt Triggers
 
----
+Invoke this Skill in scenarios such as:
 
-## Guardrails: What This Is NOT (Anti-Misuse)
-
-To preserve the framework's analytical rigor, its operational boundaries are strictly defined:
-
-* ❌ **It is NOT**:
-  * A tool for brainstorming random business models from thin air;
-  * A playbook of growth-hacking gimmicks, artificial streaks, gamified badges, or notification spam to manufacture synthetic engagement.
-* ✅ **Its True Mission**:
-  * **To stress-test and refine an already-scoped feature, ensuring that its psychological mechanics genuinely fulfill authentic human needs rather than team-centric "vanity pseudo-designs."**
-
----
-
-## When to Use This Framework
-
-Activate this framework when you or your AI Coding Agent face the following production challenges:
-
-### Scenario 1: Defining a Feature's Core Contract (From Inert Inventory to Situated Delivery)
-* **Context**: The feature concept is agreed upon, but the team instinctively defaults to stacking categories, filters, or endless catalog rows—overwhelming the user's finite situated bandwidth.
-* **Production Retrospective**:  
-  👉 **[Case 01: The Topic Card System — From Category Clutter to Contract Alignment](#case-01-the-topic-card-system--content-contract--context-alignment)**  
-  *During dedicated practice time, users do not want the anxiety of browsing 40 broad categories; they need an instant, low-friction contract card with predictable conversational bounds.*
-
-### Scenario 2: Deducing Contextual Boundaries for Micro-Interactions
-* **Context**: Designing an active UI component (such as expand/collapse cards, transient modals, drafts, or multi-step sheets) and deciding when state should persist versus when it must silently reset to zero debt.
-* **Production Retrospective**:  
-  👉 **[Case 02: Dynamic Reading States — Deducing the 3 Situational Boundaries](#case-02-dynamic-reading-states--the-3-situational-boundaries)**  
-  *Card expansion is an ephemeral "transient attentional state," not permanent content. Deducing when to protect deep reading flow vs. when to silently reset off-screen without visual clutter.*
-
-### Scenario 3: Auditing Existing Features to Purge "Team Vanity"
-* **Context**: An existing feature looks polished in design reviews, but real users churn or express quiet fatigue. Use the framework's Litmus Tests to inspect whether the feature restores equilibrium or manufactures artificial anxiety.
+* **Defining the Core Contract (Avoiding Catalog Clutter)**: *"Help me deduce the delivery contract for this feature to avoid overwhelming users with browsing debt."* ➔ [Case 01: Topic Card System](#case-01-the-topic-card-system--content-contract--context-alignment)
+* **Deducing Micro-Interaction Boundaries**: *"Deduce the lifecycle boundaries for this expandable card: when to maintain state and when to silently reset off-screen."* ➔ [Case 02: Dynamic Reading States](#case-02-dynamic-reading-states--the-3-situational-boundaries)
+* **Auditing Existing Work to Purge Vanity**: *"Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation."*
 
 ---
 
