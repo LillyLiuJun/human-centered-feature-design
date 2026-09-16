@@ -227,6 +227,89 @@
       color: #8C867E;
     }
 
+    .install-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .install-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .install-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-orange);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .install-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .install-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 0.85rem;
+    }
+
+    .install-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    .install-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .install-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.2rem;
+      color: var(--accent-orange);
+    }
+
+    .install-list code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: var(--bg-warm-subtle);
+      padding: 2px 5px;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .code-block-sm {
+      background: #23201D;
+      color: #E6E1DC;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin-top: auto;
+    }
+
     .retro-item {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
@@ -374,14 +457,14 @@
       <h3 id="txt-trig-head">Common Prompt Triggers</h3>
       <div class="scenario-list">
         <div class="scenario-item">
-          <div class="scenario-item-title" id="s1-t">Defining Core Contract (Avoiding Catalog Clutter)</div>
-          <div class="scenario-item-prompt" id="s1-p">"Help me deduce the delivery contract for this feature to avoid overwhelming users with browsing debt."</div>
+          <div class="scenario-item-title" id="s1-t">Defining the Core Contract (What Data to Show)</div>
+          <div class="scenario-item-prompt" id="s1-p">"Look at this card: what data and information should it actually display to fit the user's situation and motivate usage?"</div>
           <a href="#case-01" class="scenario-item-link" id="s1-l">➔ Case 01: Topic Card System</a>
         </div>
 
         <div class="scenario-item">
           <div class="scenario-item-title" id="s2-t">Deducing Micro-Interaction Boundaries</div>
-          <div class="scenario-item-prompt" id="s2-p">"Deduce the lifecycle boundaries for this expandable card: when to maintain state and when to silently reset off-screen."</div>
+          <div class="scenario-item-prompt" id="s2-p">"Analyze the user's genuine need and how to design the interaction: e.g., when an expanded card is scrolled away or blurred, when should it maintain state and when should it silently reset?"</div>
           <a href="#case-02" class="scenario-item-link" id="s2-l">➔ Case 02: Dynamic Reading States</a>
         </div>
 
@@ -392,18 +475,44 @@
       </div>
     </section>
 
-    <!-- Quick Start & Agent Integration -->
+    <!-- Quick Start & Installation -->
     <section>
-      <h2 id="txt-a-head">Quick Start & AI Coding Agent Integration</h2>
+      <h2 id="txt-a-head">Quick Start & Installation</h2>
       <p id="txt-a-intro">
-        Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and psychological deduction before generating UI code.
+        As an open Agent Skill and prompt specification, this framework supports three primary deployment environments:
       </p>
 
-      <div class="code-block">
-        <span class="code-comment"># Global installation for Claude Code</span><br />
-        mkdir -p ~/.config/skills/human-centered-feature-design<br />
-        cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md<br /><br />
-        <span class="code-comment"># Or drop SKILL.md directly into your Cursor / Antigravity project rules</span>
+      <div class="install-grid">
+        <div class="install-card">
+          <div class="install-badge" id="inst-c1-b">1. TERMINAL CODING AGENTS</div>
+          <div class="install-title" id="inst-c1-t">Claude Code / Antigravity CLI</div>
+          <div class="install-desc" id="inst-c1-d">Native standard Skill. Automatically activates when feature planning or UX decisions arise.</div>
+          <div class="code-block-sm">
+            <span class="code-comment"># Global install for Claude Code</span><br />
+            mkdir -p ~/.config/skills/human-centered-feature-design<br />
+            cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
+          </div>
+        </div>
+
+        <div class="install-card">
+          <div class="install-badge" id="inst-c2-b">2. DESKTOP AI IDES</div>
+          <div class="install-title" id="inst-c2-t">Cursor / Windsurf</div>
+          <div class="install-desc" id="inst-c2-d">Inject directly as project-level rules to guide code generation and UX reasoning.</div>
+          <ul class="install-list" id="inst-c2-l">
+            <li><strong>Cursor</strong>: Create <code>.cursor/rules/human-centered-feature-design.mdc</code> or paste into <code>.cursorrules</code>.</li>
+            <li><strong>Windsurf</strong>: Save into <code>.windsurfrules</code> at repository root.</li>
+          </ul>
+        </div>
+
+        <div class="install-card">
+          <div class="install-badge" id="inst-c3-b">3. CHAT CLIENTS</div>
+          <div class="install-title" id="inst-c3-t">Claude Desktop / Claude.ai / ChatGPT</div>
+          <div class="install-desc" id="inst-c3-d">Zero command-line required. Use in standard conversational chat interfaces.</div>
+          <ul class="install-list" id="inst-c3-l">
+            <li><strong>Claude Projects (Recommended)</strong>: Upload <code>SKILL.md</code> to Project Knowledge & set Custom Instructions.</li>
+            <li><strong>Ad-hoc Chat</strong>: Attach <code>SKILL.md</code> directly into any conversation.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -504,19 +613,30 @@
         pBody2: "它帮你理清在特定情境下用户真正需要什么，大至功能定义、小至交互细节，推导出真正契合人性心理机制的产品解法——<strong>确保它是真正能解决问题的好设计，而不是团队自我感觉良好、制造虚假粘性的伪设计。</strong>",
         trigHead: "常见触发场景（提示词示例）",
 
-        s1T: "界定核心契约（避免类目堆砌）",
-        s1P: "“用本框架帮我推演这个功能的交付契约，避免堆砌海量库存造成决策负担。”",
+        s1T: "界定核心契约（展示什么促成使用）",
+        s1P: "“帮我看看这个卡片应该展示哪些数据和信息，才能真正契合当下情境，促使用户去使用？”",
         s1L: "➔ 案例 01：话题卡重构",
 
         s2T: "推导微观交互的情境边界",
-        s2P: "“推演卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位。”",
+        s2P: "“帮我看看用户的真实需求以及该如何设计交互：比如卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位？”",
         s2L: "➔ 案例 02：动态阅读状态",
 
         s3T: "现有功能去伪存真",
         s3P: "“用本框架的三大黄金法则审查当前方案，剔除团队自嗨与虚假动机。”",
 
-        aHead: "快速上手与 AI Coding Agent 集成",
-        aIntro: "当前的 LLM 在写代码和设计 UI 时极易掉入套路陷阱（默认建议红点、签到弹窗、死板步进器）。把本 Skill 注入 Agent，赋予 AI 顶级产品经理的“克制审美与情境推理能力”，让 AI 在写代码前先自检心理机制。",
+        aHead: "快速上手与安装集成",
+        aIntro: "本框架作为一份 Agent Skill 与提示规范，支持在三种主流环境中即插即用：",
+        instC1B: "1. 终端 CODING AGENT",
+        instC1T: "Claude Code / Antigravity CLI",
+        instC1D: "在终端代理工具中，可直接作为标准 Skill 加载。生效后，Agent 在检测到功能设计或交互规划时会自动调用。",
+        instC2B: "2. 桌面 AI IDE",
+        instC2T: "Cursor / Windsurf",
+        instC2D: "在 AI 驱动的代码编辑器中，作为项目规则（Rules）注入，指导代码生成与交互推导：",
+        instC2L: "<li><strong>Cursor</strong>：在项目根目录创建 <code>.cursor/rules/human-centered-feature-design.mdc</code>，或粘贴至 <code>.cursorrules</code>；</li><li><strong>Windsurf</strong>：保存至项目根目录的 <code>.windsurfrules</code>。</li>",
+        instC3B: "3. 桌面 / 网页客户端",
+        instC3T: "Claude Desktop / Claude.ai / ChatGPT",
+        instC3D: "在常规对话窗口中，无需写命令行即可即插即用：",
+        instC3L: "<li><strong>Claude Projects（推荐）</strong>：上传 <code>SKILL_zh.md</code> 至 Project Knowledge 并设置自定义指令；</li><li><strong>单次会话直接使用</strong>：在任意聊天窗口直接上传 <code>SKILL_zh.md</code>。</li>",
 
         rHead: "真实业务实战复盘 (Production Retrospectives)",
         rIntro: "两篇真实商业产品（AI 语言应用）的设计复盘，完整展示情境推理如何解决实际业务痛点：",
@@ -556,29 +676,40 @@
         pBody2: "It deduces what users actually require in specific situations—from macro feature definitions down to micro interaction details—grounding product solutions in human psychology rather than team-centric vanity or synthetic stickiness.",
         trigHead: "Common Prompt Triggers",
 
-        s1T: "Defining Core Contract (Avoiding Catalog Clutter)",
-        s1P: ""Help me deduce the delivery contract for this feature to avoid overwhelming users with browsing debt."",
+        s1T: "Defining the Core Contract (What Data to Show)",
+        s1P: "\"Look at this card: what data and information should it actually display to fit the user's situation and motivate usage?\"",
         s1L: "➔ Case 01: Topic Card System",
 
         s2T: "Deducing Micro-Interaction Boundaries",
-        s2P: ""Deduce the lifecycle boundaries for this expandable card: when to maintain state and when to silently reset off-screen."",
+        s2P: "\"Analyze the user's genuine need and how to design the interaction: e.g., when an expanded card is scrolled away or blurred, when should it maintain state and when should it silently reset?\"",
         s2L: "➔ Case 02: Dynamic Reading States",
 
         s3T: "Auditing Existing Work to Purge Vanity",
-        s3P: ""Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation."",
+        s3P: "\"Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation.\"",
 
-        aHead: "Quick Start & AI Coding Agent Integration",
-        aIntro: "Modern LLMs default to generic product tropes: intrusive streak modals, rigid steppers, and notification spam. Loading this Skill equips your Agent with editorial restraint and psychological deduction before generating UI code.",
+        aHead: "Quick Start & Installation",
+        aIntro: "As an open Agent Skill and prompt specification, this framework supports three primary deployment environments:",
+        instC1B: "1. TERMINAL CODING AGENTS",
+        instC1T: "Claude Code / Antigravity CLI",
+        instC1D: "Native standard Skill. Automatically activates when feature planning or UX decisions arise.",
+        instC2B: "2. DESKTOP AI IDES",
+        instC2T: "Cursor / Windsurf",
+        instC2D: "Inject directly as project-level rules to guide code generation and UX reasoning:",
+        instC2L: "<li><strong>Cursor</strong>: Create <code>.cursor/rules/human-centered-feature-design.mdc</code> or paste into <code>.cursorrules</code>.</li><li><strong>Windsurf</strong>: Save into <code>.windsurfrules</code> at repository root.</li>",
+        instC3B: "3. CHAT CLIENTS",
+        instC3T: "Claude Desktop / Claude.ai / ChatGPT",
+        instC3D: "Zero command-line required. Use in standard conversational chat interfaces:",
+        instC3L: "<li><strong>Claude Projects (Recommended)</strong>: Upload <code>SKILL.md</code> to Project Knowledge & set Custom Instructions.</li><li><strong>Ad-hoc Chat</strong>: Attach <code>SKILL.md</code> directly into any conversation.</li>",
 
         rHead: "Production Retrospectives",
         rIntro: "Two grounded case studies demonstrating theoretical deduction resolving real commercial UX problems:",
         r1Title: "Case 01: Topic Card System — Content Contract & Context Alignment",
         r1Ctx: "AI language immersion app. Daily topic discovery cards had poor engagement.",
         r1Diag: "Users during dedicated practice already have high motivation; the true bottleneck was decision friction (broad categories felt like unquantifiable homework), breaking the contract between card promise and screen delivery.",
-        r1Refact: "Shifted from categories to strict contract cards ("Talk about yesterday's dream in 3 min"); managed digestive debt instead of static inventory.",
+        r1Refact: "Shifted from categories to strict contract cards (\"Talk about yesterday's dream in 3 min\"); managed digestive debt instead of static inventory.",
         r2Title: "Case 02: Dynamic Reading States — The 3 Situational Boundaries",
         r2Ctx: "Long-form reading card with tap-to-expand state.",
-        r2Diag: "Card expansion is an ephemeral "transient attentional state," not permanent content. Persisting it leaves cognitive clutter upon return; mechanical auto-collapse cuts off reading flow.",
+        r2Diag: "Card expansion is an ephemeral \"transient attentional state,\" not permanent content. Persisting it leaves cognitive clutter upon return; mechanical auto-collapse cuts off reading flow.",
         r2Refact: "Established 3 strict situational boundaries: protect flow during micro-interruptions in viewport; silently reset when fully scrolled off-screen; silent reset upon leaving the module.",
 
         wHead: "The Foundational Worldview",
@@ -627,6 +758,17 @@
 
       document.getElementById('txt-a-head').innerText = d.aHead;
       document.getElementById('txt-a-intro').innerText = d.aIntro;
+      document.getElementById('inst-c1-b').innerText = d.instC1B;
+      document.getElementById('inst-c1-t').innerText = d.instC1T;
+      document.getElementById('inst-c1-d').innerText = d.instC1D;
+      document.getElementById('inst-c2-b').innerText = d.instC2B;
+      document.getElementById('inst-c2-t').innerText = d.instC2T;
+      document.getElementById('inst-c2-d').innerText = d.instC2D;
+      document.getElementById('inst-c2-l').innerHTML = d.instC2L;
+      document.getElementById('inst-c3-b').innerText = d.instC3B;
+      document.getElementById('inst-c3-t').innerText = d.instC3T;
+      document.getElementById('inst-c3-d').innerText = d.instC3D;
+      document.getElementById('inst-c3-l').innerHTML = d.instC3L;
 
       document.getElementById('txt-r-head').innerText = d.rHead;
       document.getElementById('txt-r-intro').innerText = d.rIntro;

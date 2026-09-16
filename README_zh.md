@@ -31,36 +31,34 @@
 
 你可以在以下场景中直接调用本 Skill：
 
-* **界定核心契约（避免类目堆砌）**：*“用本框架帮我推演这个功能的交付契约，避免堆砌海量库存造成决策负担。”* ➔ [案例 01：话题卡重构](#案例-01话题卡重构内容契约与处境的对齐)
-* **推导微观交互的情境边界**：*“推演卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位。”* ➔ [案例 02：动态阅读状态](#案例-02动态阅读状态三重处境边界的拆解)
+* **界定核心契约（展示什么促成使用）**：*“帮我看看这个卡片应该展示哪些数据和信息，才能真正契合当下情境，促使用户去使用？”* ➔ [案例 01：话题卡重构](#案例-01话题卡重构内容契约与处境的对齐)
+* **推导微观交互的情境边界**：*“帮我看看用户的真实需求以及该如何设计交互：比如卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位？”* ➔ [案例 02：动态阅读状态](#案例-02动态阅读状态三重处境边界的拆解)
 * **现有功能去伪存真**：*“用本框架的三大黄金法则审查当前方案，剔除团队自嗨与虚假动机。”*
 
 ---
 
-## 快速上手与 AI Coding Agent 集成
+## 快速上手与安装集成
 
-### 为什么 AI Coding Agent（Claude Code / Cursor / Antigravity）极度需要它？
-当前的 LLM 在写代码和设计 UI 时，极其容易掉入“平庸套路”的陷阱：默认建议做红点提醒、签到弹窗、死板的步进器或过度复杂的操作流。把本 Skill 注入 Agent 后，能**赋予 AI 顶级产品经理的“克制审美与情境推理能力”**，让 AI 在写代码前先自检心理机制。
+本框架作为一份 Agent Skill 与提示规范，支持在三种主流环境中即插即用：
 
-### 1. 作为 Agent Skill 安装（1 分钟跑通）
-
-#### 方式 A：Claude Code 全局安装
+### 1. 终端 Coding Agent（Claude Code / Antigravity CLI）
+在终端代理工具中，可直接作为标准 Skill 加载：
 ```bash
-# 克隆仓库并软链接到 Claude Code skills 目录
-git clone https://github.com/your-username/human-centered-feature-design.git
+# 全局安装到 Claude Code 技能目录
 mkdir -p ~/.config/skills/human-centered-feature-design
-cp human-centered-feature-design/SKILL_zh.md ~/.config/skills/human-centered-feature-design/SKILL.md
+cp SKILL_zh.md ~/.config/skills/human-centered-feature-design/SKILL.md
 ```
+*生效后，Agent 在检测到功能设计、交互规划或重构需求时会自动调用。*
 
-#### 方式 B：Cursor / Windsurf / Antigravity 项目注入
-将本仓库中的 `SKILL_zh.md`（或英文版 `SKILL.md`）直接拷贝至项目的 `.cursorrules`、`.rules` 或 `.github/agent-skills/` 目录下。
+### 2. 桌面 AI IDE（Cursor / Windsurf）
+在 AI 驱动的代码编辑器中，可作为项目规则（Rules）注入：
+* **Cursor**：在项目根目录创建 `.cursor/rules/human-centered-feature-design.mdc`，或将 `SKILL_zh.md` 内容直接粘贴至 `.cursorrules` 中；
+* **Windsurf**：将内容保存至项目根目录的 `.windsurfrules` 中。
 
-### 2. 日常调用与结对推导
-
-在日常与 AI 结对编程或方案推演时，你可以直接吩咐 Agent：
-> *“帮我设计这个卡片的交互方案，先用 human-centered-feature-design 诊断用户在当下情境的心理稳态和能动感，避免制造伪需求。”*  
-> *“为什么用户在这个界面容易放弃？用本框架的六大能力感环节做一次漏洞排查。”*  
-> *“用框架的三大黄金检验原则，审查当前 PR 的交互细节。”*
+### 3. 桌面端 / 网页版客户端（Claude Desktop / Claude.ai / ChatGPT）
+在常规对话窗口中，无需写命令行即可使用：
+* **Claude.ai / Claude Desktop（推荐）**：新建一个 **Project（项目）**，将 `SKILL_zh.md` 上传至 **Project Knowledge（项目知识库）**，在项目指令中添加：*“推演产品功能与交互时，调用《以人为中心的功能设计》框架”*；
+* **单次会话直接使用**：在任意聊天窗口直接上传 `SKILL_zh.md`，或把文本粘贴作为 System Prompt。
 
 ---
 

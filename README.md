@@ -31,36 +31,34 @@ It deduces what users actually require in specific situations—from macro featu
 
 Invoke this Skill in scenarios such as:
 
-* **Defining the Core Contract (Avoiding Catalog Clutter)**: *"Help me deduce the delivery contract for this feature to avoid overwhelming users with browsing debt."* ➔ [Case 01: Topic Card System](#case-01-the-topic-card-system--content-contract--context-alignment)
-* **Deducing Micro-Interaction Boundaries**: *"Deduce the lifecycle boundaries for this expandable card: when to maintain state and when to silently reset off-screen."* ➔ [Case 02: Dynamic Reading States](#case-02-dynamic-reading-states--the-3-situational-boundaries)
+* **Defining the Core Contract (What Data to Show)**: *"Look at this card: what data and information should it actually display to fit the user's situation and motivate usage?"* ➔ [Case 01: Topic Card System](#case-01-the-topic-card-system--content-contract--context-alignment)
+* **Deducing Micro-Interaction Boundaries**: *"Analyze the user's genuine need and how to design the interaction: e.g., when an expanded card is scrolled away or blurred, when should it maintain state and when should it silently reset?"* ➔ [Case 02: Dynamic Reading States](#case-02-dynamic-reading-states--the-3-situational-boundaries)
 * **Auditing Existing Work to Purge Vanity**: *"Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation."*
 
 ---
 
-## Quick Start & AI Coding Agent Integration
+## Quick Start & Installation
 
-### Why AI Coding Agents (Claude Code / Cursor / Antigravity) Need This Skill
-Modern LLMs default to generic product patterns: push notifications, streak modals, rigid steppers, and superficial gamification. Loading this Skill equips the Agent with **editorial restraint and psychological deduction**, forcing the model to evaluate cognitive contracts before writing UI code.
+As an open Agent Skill and prompt specification, this framework supports three primary deployment environments:
 
-### 1. Installation (1-Minute Setup)
-
-#### Method A: Claude Code Global Skill
+### 1. Terminal Coding Agents (Claude Code / Antigravity CLI)
+Load directly as a native standard Skill:
 ```bash
-# Clone and link to your local Claude Code skills directory
-git clone https://github.com/your-username/human-centered-feature-design.git
+# Global install into Claude Code skills directory
 mkdir -p ~/.config/skills/human-centered-feature-design
-cp human-centered-feature-design/SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
+cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
 ```
+*The Agent will automatically activate the skill when feature planning or UX decisions arise.*
 
-#### Method B: Cursor / Windsurf / Antigravity Project Rule
-Copy `SKILL.md` (or Chinese `SKILL_zh.md`) directly into your project's `.cursorrules`, `.rules`, or `.github/agent-skills/` directory.
+### 2. Desktop AI IDEs (Cursor / Windsurf)
+Inject directly as project-level rules:
+* **Cursor**: Create `.cursor/rules/human-centered-feature-design.mdc` in your project root, or paste `SKILL.md` into `.cursorrules`;
+* **Windsurf**: Save the file as `.windsurfrules` in your repository root.
 
-### 2. Pairing with Your Agent
-
-Prompt your coding assistant directly:
-> *"Audit this interactive component using human-centered-feature-design. Is it solving an authentic situated need, or introducing artificial friction?"*  
-> *"Why are users dropping off on this screen? Run a diagnosis across the 6 Agency Touchpoints."*  
-> *"Review this PR against the Three Litmus Tests before we merge."*
+### 3. Desktop / Web Chat Clients (Claude Desktop / Claude.ai / ChatGPT)
+Use in standard conversational chat interfaces without command-line setup:
+* **Claude.ai / Claude Desktop (Recommended)**: Create a **Project**, upload `SKILL.md` into **Project Knowledge**, and add to Custom Instructions: *"When deducing feature requirements or UX flows, apply the Human-Centered Feature Design framework."*
+* **Ad-hoc Chat**: Attach `SKILL.md` directly into any conversation or paste into system instructions.
 
 ---
 
