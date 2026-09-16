@@ -37,28 +37,48 @@ Invoke this Skill in scenarios such as:
 
 ---
 
-## Quick Start & Installation
+## Usage: Command Line & Manual Modes
 
-As an open Agent Skill and prompt specification, this framework supports three primary deployment environments:
+This framework supports two distinct usage paths: a **Command Line mode** tailored for terminal-first developers and coding agents, and a **Manual mode** designed for product managers, designers, and team collaboration.
 
-### 1. Terminal Coding Agents (Claude Code / Antigravity CLI)
-Load directly as a native standard Skill:
+### Mode 1: Command Line Mode (CLI / Agent CLI)
+*For terminal developers: rapid installation via CLI and direct pairing with coding agents (Claude Code, Antigravity CLI).*
+
+#### 1. CLI Installation
 ```bash
 # Global install into Claude Code skills directory
 mkdir -p ~/.config/skills/human-centered-feature-design
 cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
 ```
-*The Agent will automatically activate the skill when feature planning or UX decisions arise.*
+*Once installed, terminal agents will automatically activate the skill when feature planning, UX decisions, or UI component refactors arise.*
 
-### 2. Desktop AI IDEs (Cursor / Windsurf)
-Inject directly as project-level rules:
-* **Cursor**: Create `.cursor/rules/human-centered-feature-design.mdc` in your project root, or paste `SKILL.md` into `.cursorrules`;
-* **Windsurf**: Save the file as `.windsurfrules` in your repository root.
+#### 2. Terminal Pairing & Code Review
+In your daily terminal workflow, prompt your coding agent directly:
+```bash
+# Feature contract & information architecture deduction
+claude "Look at this card: what data and information should it actually display to fit the user's situation and motivate usage?"
 
-### 3. Desktop / Web Chat Clients (Claude Desktop / Claude.ai / ChatGPT)
-Use in standard conversational chat interfaces without command-line setup:
-* **Claude.ai / Claude Desktop (Recommended)**: Create a **Project**, upload `SKILL.md` into **Project Knowledge**, and add to Custom Instructions: *"When deducing feature requirements or UX flows, apply the Human-Centered Feature Design framework."*
-* **Ad-hoc Chat**: Attach `SKILL.md` directly into any conversation or paste into system instructions.
+# PR & micro-interaction code review
+claude "Review this branch using human-centered-feature-design: check card expand/collapse boundaries for when to maintain state vs. silently reset off-screen."
+```
+
+---
+
+### Mode 2: Manual Mode (GUI & Human Review)
+*For product managers, designers, and team collaboration: zero command line required. Works via AI chat apps or as a standalone human review checklist.*
+
+#### 1. GUI & Chat Integrations (No-CLI AI Chat)
+* **Claude.ai / Claude Desktop (Recommended)**: Create a **Project**, upload `SKILL.md` to **Project Knowledge**, and add to Custom Instructions: *"When deducing feature requirements or UX flows, apply the Human-Centered Feature Design framework."* The framework remains permanently active in that workspace;
+* **Desktop AI IDEs (Cursor / Windsurf)**: In your editor's file tree, manually create rule files:
+  * **Cursor**: Create `.cursor/rules/human-centered-feature-design.mdc` in project root, or paste `SKILL.md` into `.cursorrules`;
+  * **Windsurf**: Save the file as `.windsurfrules` in your repository root;
+* **Ad-hoc Chat**: Drag and drop `SKILL.md` directly into any ChatGPT or Claude conversation window.
+
+#### 2. Standalone Human Review Checklist (Zero-AI)
+*Operates completely without AI. Use directly as an editorial checklist during PRD drafting, wireframing, or cross-functional design reviews:*
+* **Feature Scoping**: Review the [Foundational Worldview](#the-foundational-worldview) and [Three Modules](#three-systematic-design-modules) to calibrate motivation types (discrete vs. continuous) and manage digestive debt instead of piling static inventory;
+* **Interaction Architecture**: Cross-check the [6 Agency Touchpoints](#module-2-agency-design--dignity-across-the-6-touchpoints) to ensure no cognitive friction in perception, decision, or attribution;
+* **Pre-Flight Audit**: Audit proposed features against the [Three Litmus Tests](#the-three-litmus-tests) (Does it reduce anxiety? Does the user retain sovereignty? Does it respect situated context?).
 
 ---
 

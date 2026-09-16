@@ -37,28 +37,48 @@
 
 ---
 
-## 快速上手与安装集成
+## 使用方式：命令行与手动两种模式 (Usage)
 
-本框架作为一份 Agent Skill 与提示规范，支持在三种主流环境中即插即用：
+本框架支持两种完全不同的使用路径：针对工程师与终端习惯者的**命令行方式**，以及针对产品经理、设计师与日常协作的**手动方式**。
 
-### 1. 终端 Coding Agent（Claude Code / Antigravity CLI）
-在终端代理工具中，可直接作为标准 Skill 加载：
+### 方式一：命令行方式 (Command Line / Agent CLI)
+*面向终端与开发者：通过命令行一键安装，并与终端 Coding Agent（如 Claude Code / Antigravity CLI）实时结对推演。*
+
+#### 1. 终端一键安装 (CLI Install)
 ```bash
 # 全局安装到 Claude Code 技能目录
 mkdir -p ~/.config/skills/human-centered-feature-design
 cp SKILL_zh.md ~/.config/skills/human-centered-feature-design/SKILL.md
 ```
-*生效后，Agent 在检测到功能设计、交互规划或重构需求时会自动调用。*
+*生效后，终端 Agent 在检测到功能设计、交互规划或组件代码重构时会自动调度。*
 
-### 2. 桌面 AI IDE（Cursor / Windsurf）
-在 AI 驱动的代码编辑器中，可作为项目规则（Rules）注入：
-* **Cursor**：在项目根目录创建 `.cursor/rules/human-centered-feature-design.mdc`，或将 `SKILL_zh.md` 内容直接粘贴至 `.cursorrules` 中；
-* **Windsurf**：将内容保存至项目根目录的 `.windsurfrules` 中。
+#### 2. 终端结对推演与代码审查 (Terminal Pairing)
+在日常终端编码中，直接向 Coding Agent 发起情境推导或代码审查：
+```bash
+# 功能契约与信息呈现推导
+claude "帮我看看这个卡片应该展示哪些数据和信息，才能真正契合当下情境，促使用户去使用？"
 
-### 3. 桌面端 / 网页版客户端（Claude Desktop / Claude.ai / ChatGPT）
-在常规对话窗口中，无需写命令行即可使用：
-* **Claude.ai / Claude Desktop（推荐）**：新建一个 **Project（项目）**，将 `SKILL_zh.md` 上传至 **Project Knowledge（项目知识库）**，在项目指令中添加：*“推演产品功能与交互时，调用《以人为中心的功能设计》框架”*；
-* **单次会话直接使用**：在任意聊天窗口直接上传 `SKILL_zh.md`，或把文本粘贴作为 System Prompt。
+# PR / 代码微观交互审查
+claude "用 human-centered-feature-design 审查当前分支的代码：卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位？"
+```
+
+---
+
+### 方式二：手动方式 (Manual / GUI & Human Review)
+*面向产品经理、设计师与日常协作：无需敲命令行，支持通过图形界面对话，或作为团队纯人工自检手册。*
+
+#### 1. 图形界面 / 对话助手接入 (No-CLI AI Chat)
+* **Claude.ai / Claude Desktop（推荐）**：在网页端或桌面端新建一个 **Project（项目）**，手动将 `SKILL_zh.md` 上传至 **Project Knowledge（项目知识库）**。在项目指令中添加：*“推演产品功能与交互时，严格调用《以人为中心的功能设计》框架”*，即可在此项目中长期生效；
+* **桌面 AI IDE（Cursor / Windsurf）**：在编辑器左侧文件树中手动新建规则文件：
+  * **Cursor**：创建 `.cursor/rules/human-centered-feature-design.mdc`，或将 `SKILL_zh.md` 粘贴到 `.cursorrules` 中；
+  * **Windsurf**：将内容保存至项目根目录的 `.windsurfrules` 中；
+* **单次会话直接使用**：在 ChatGPT、Claude 或任意聊天窗口中，直接将 `SKILL_zh.md` 拖拽作为文件附件发送即可开始对话。
+
+#### 2. 纯人工自检与评审手册 (Manual Checklist / Zero-AI)
+*脱离任何 AI 工具，团队在撰写 PRD、绘制原型或进行跨职能需求评审会（Design Review）时直接作为避坑核对清单：*
+* **需求定案前**：核对 [底层世界观](#底层世界观为什么这套推理行之有效) 与 [动机设计](#模块一动机设计让功能成为需求的自然出口)，界定属于离散型还是连续型，避免堆砌静态库存；
+* **交互细节推演**：核对 [能力感六大环节](#模块二能力感设计交互六大环节的尊严沉淀)，排查用户在感知、决策与操作中是否存在认知卡顿或归功偏差；
+* **上线前终审**：逐一对照 [三条黄金检验原则](#上线前审查三条黄金检验原则) 打钩自检（是否制造焦虑？是否剥夺掌控感？是否制造处境噪音？）。
 
 ---
 

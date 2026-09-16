@@ -227,69 +227,81 @@
       color: #8C867E;
     }
 
-    .install-grid {
+    .modes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
-    .install-card {
+    .mode-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 1.5rem;
+      border-radius: 12px;
+      padding: 1.75rem;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
 
-    .install-badge {
+    .mode-badge {
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--accent-orange);
       letter-spacing: 0.08em;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
       font-weight: 600;
     }
 
-    .install-title {
-      font-size: 1.05rem;
+    .mode-title {
+      font-size: 1.2rem;
       font-weight: 600;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
     }
 
-    .install-desc {
-      font-size: 0.9rem;
+    .mode-desc {
+      font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.55;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px dashed var(--border-subtle);
     }
 
-    .install-list {
+    .mode-step-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin: 0.75rem 0 0.35rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .mode-list {
       list-style: none;
       padding: 0;
-      margin: 0;
-      font-size: 0.86rem;
+      margin: 0.4rem 0 1rem 0;
+      font-size: 0.88rem;
       color: var(--text-body);
       line-height: 1.6;
     }
 
-    .install-list li {
-      margin-bottom: 0.5rem;
+    .mode-list li {
+      margin-bottom: 0.55rem;
       padding-left: 1.2rem;
       position: relative;
     }
 
-    .install-list li::before {
+    .mode-list li::before {
       content: "•";
       position: absolute;
       left: 0.2rem;
       color: var(--accent-orange);
     }
 
-    .install-list code {
+    .mode-list code {
       font-family: var(--font-mono);
       font-size: 0.8rem;
       background: var(--bg-warm-subtle);
@@ -307,7 +319,7 @@
       font-size: 0.78rem;
       line-height: 1.5;
       overflow-x: auto;
-      margin-top: auto;
+      margin-top: 0.25rem;
     }
 
     .retro-item {
@@ -475,42 +487,54 @@
       </div>
     </section>
 
-    <!-- Quick Start & Installation -->
+    <!-- Usage: Command Line & Manual Modes -->
     <section>
-      <h2 id="txt-a-head">Quick Start & Installation</h2>
-      <p id="txt-a-intro">
-        As an open Agent Skill and prompt specification, this framework supports three primary deployment environments:
+      <h2 id="txt-u-head">Usage: Command Line & Manual Modes</h2>
+      <p id="txt-u-intro">
+        This framework supports two distinct usage paths: a <strong>Command Line mode</strong> for terminal-first developers and coding agents, and a <strong>Manual mode</strong> for product managers, designers, and team collaboration.
       </p>
 
-      <div class="install-grid">
-        <div class="install-card">
-          <div class="install-badge" id="inst-c1-b">1. TERMINAL CODING AGENTS</div>
-          <div class="install-title" id="inst-c1-t">Claude Code / Antigravity CLI</div>
-          <div class="install-desc" id="inst-c1-d">Native standard Skill. Automatically activates when feature planning or UX decisions arise.</div>
+      <div class="modes-grid">
+        <!-- Mode 1: Command Line -->
+        <div class="mode-card">
+          <div class="mode-badge" id="m1-badge">MODE 01 · TERMINAL & CODING AGENTS</div>
+          <div class="mode-title" id="m1-title">Command Line Mode (Agent CLI)</div>
+          <div class="mode-desc" id="m1-desc">For developers: rapid CLI installation and direct pairing with Claude Code or Antigravity CLI.</div>
+
+          <div class="mode-step-title" id="m1-s1-title">1. CLI Installation</div>
           <div class="code-block-sm">
             <span class="code-comment"># Global install for Claude Code</span><br />
             mkdir -p ~/.config/skills/human-centered-feature-design<br />
             cp SKILL.md ~/.config/skills/human-centered-feature-design/SKILL.md
           </div>
+
+          <div class="mode-step-title" id="m1-s2-title" style="margin-top: 1.25rem;">2. Terminal Pairing & Code Review</div>
+          <div class="code-block-sm">
+            <span class="code-comment"># Feature & contract deduction</span><br />
+            claude "Look at this card: what data and info should it actually display?"<br /><br />
+            <span class="code-comment"># PR / micro-interaction state review</span><br />
+            claude "Review this PR: check card state boundaries when off-screen."
+          </div>
         </div>
 
-        <div class="install-card">
-          <div class="install-badge" id="inst-c2-b">2. DESKTOP AI IDES</div>
-          <div class="install-title" id="inst-c2-t">Cursor / Windsurf</div>
-          <div class="install-desc" id="inst-c2-d">Inject directly as project-level rules to guide code generation and UX reasoning.</div>
-          <ul class="install-list" id="inst-c2-l">
-            <li><strong>Cursor</strong>: Create <code>.cursor/rules/human-centered-feature-design.mdc</code> or paste into <code>.cursorrules</code>.</li>
-            <li><strong>Windsurf</strong>: Save into <code>.windsurfrules</code> at repository root.</li>
-          </ul>
-        </div>
+        <!-- Mode 2: Manual Mode -->
+        <div class="mode-card">
+          <div class="mode-badge" id="m2-badge">MODE 02 · MANUAL & HUMAN AUDIT</div>
+          <div class="mode-title" id="m2-title">Manual Mode (GUI & Review)</div>
+          <div class="mode-desc" id="m2-desc">For PMs and designers: zero command-line required. Use in AI chat apps or as an offline review checklist.</div>
 
-        <div class="install-card">
-          <div class="install-badge" id="inst-c3-b">3. CHAT CLIENTS</div>
-          <div class="install-title" id="inst-c3-t">Claude Desktop / Claude.ai / ChatGPT</div>
-          <div class="install-desc" id="inst-c3-d">Zero command-line required. Use in standard conversational chat interfaces.</div>
-          <ul class="install-list" id="inst-c3-l">
+          <div class="mode-step-title" id="m2-s1-title">1. GUI & Chat Integrations (No-CLI AI)</div>
+          <ul class="mode-list" id="m2-s1-list">
             <li><strong>Claude Projects (Recommended)</strong>: Upload <code>SKILL.md</code> to Project Knowledge & set Custom Instructions.</li>
-            <li><strong>Ad-hoc Chat</strong>: Attach <code>SKILL.md</code> directly into any conversation.</li>
+            <li><strong>Desktop AI IDEs (Cursor/Windsurf)</strong>: Create <code>.cursorrules</code> or <code>.windsurfrules</code> in project root.</li>
+            <li><strong>Ad-hoc Chat</strong>: Drag and drop <code>SKILL.md</code> directly into ChatGPT or Claude conversation.</li>
+          </ul>
+
+          <div class="mode-step-title" id="m2-s2-title" style="margin-top: 0.5rem;">2. Standalone Review Checklist (Zero-AI)</div>
+          <ul class="mode-list" id="m2-s2-list">
+            <li><strong>Feature Scoping</strong>: Check motivation types (discrete vs. continuous) and manage digestive debt.</li>
+            <li><strong>Interaction Architecture</strong>: Cross-check the 6 Agency Touchpoints to prevent cognitive drop-offs.</li>
+            <li><strong>Pre-Flight Audit</strong>: Audit proposed PRDs against the Three Litmus Tests.</li>
           </ul>
         </div>
       </div>
@@ -624,19 +648,22 @@
         s3T: "现有功能去伪存真",
         s3P: "“用本框架的三大黄金法则审查当前方案，剔除团队自嗨与虚假动机。”",
 
-        aHead: "快速上手与安装集成",
-        aIntro: "本框架作为一份 Agent Skill 与提示规范，支持在三种主流环境中即插即用：",
-        instC1B: "1. 终端 CODING AGENT",
-        instC1T: "Claude Code / Antigravity CLI",
-        instC1D: "在终端代理工具中，可直接作为标准 Skill 加载。生效后，Agent 在检测到功能设计或交互规划时会自动调用。",
-        instC2B: "2. 桌面 AI IDE",
-        instC2T: "Cursor / Windsurf",
-        instC2D: "在 AI 驱动的代码编辑器中，作为项目规则（Rules）注入，指导代码生成与交互推导：",
-        instC2L: "<li><strong>Cursor</strong>：在项目根目录创建 <code>.cursor/rules/human-centered-feature-design.mdc</code>，或粘贴至 <code>.cursorrules</code>；</li><li><strong>Windsurf</strong>：保存至项目根目录的 <code>.windsurfrules</code>。</li>",
-        instC3B: "3. 桌面 / 网页客户端",
-        instC3T: "Claude Desktop / Claude.ai / ChatGPT",
-        instC3D: "在常规对话窗口中，无需写命令行即可即插即用：",
-        instC3L: "<li><strong>Claude Projects（推荐）</strong>：上传 <code>SKILL_zh.md</code> 至 Project Knowledge 并设置自定义指令；</li><li><strong>单次会话直接使用</strong>：在任意聊天窗口直接上传 <code>SKILL_zh.md</code>。</li>",
+        uHead: "使用方式：命令行与手动两种模式 (Usage)",
+        uIntro: "本框架支持两种完全不同的使用路径：针对工程师与终端习惯者的<strong>命令行方式</strong>，以及针对产品经理、设计师与日常协作的<strong>手动方式</strong>。",
+
+        m1Badge: "MODE 01 · 终端与 CODING AGENTS",
+        m1Title: "方式一：命令行方式 (Agent CLI)",
+        m1Desc: "面向终端与开发者：通过命令行一键安装，并与终端 Coding Agent（如 Claude Code / Antigravity CLI）实时结对推演。",
+        m1S1Title: "1. 终端一键安装 (CLI Install)",
+        m1S2Title: "2. 终端结对推演与代码审查 (Terminal Pairing)",
+
+        m2Badge: "MODE 02 · 手动与人工自检 (HUMAN AUDIT)",
+        m2Title: "方式二：手动方式 (GUI & Human Review)",
+        m2Desc: "面向产品经理、设计师与日常协作：无需敲命令行，支持通过图形界面对话，或作为团队纯人工自检手册。",
+        m2S1Title: "1. 图形界面 / 对话助手接入 (No-CLI AI)",
+        m2S1List: "<li><strong>Claude Projects（推荐）</strong>：上传 <code>SKILL_zh.md</code> 至 Project Knowledge 并设置自定义指令，在此项目中长期生效；</li><li><strong>桌面 AI IDE（Cursor/Windsurf）</strong>：在根目录新建 <code>.cursorrules</code> 或 <code>.windsurfrules</code> 规则；</li><li><strong>单次会话直接使用</strong>：将 <code>SKILL_zh.md</code> 直接拖拽入 ChatGPT 或 Claude 对话窗口。</li>",
+        m2S2Title: "2. 纯人工自检与评审手册 (Zero-AI Checklist)",
+        m2S2List: "<li><strong>需求定案前</strong>：核对底层世界观与动机设计（离散 vs 连续），避免堆砌静态库存；</li><li><strong>交互细节推演</strong>：核对能力感六大环节，排查感知、决策与操作是否存在断裂；</li><li><strong>上线前终审</strong>：逐一对照三条黄金检验原则打钩自检（焦虑？掌控感？噪音？）。</li>",
 
         rHead: "真实业务实战复盘 (Production Retrospectives)",
         rIntro: "两篇真实商业产品（AI 语言应用）的设计复盘，完整展示情境推理如何解决实际业务痛点：",
@@ -687,19 +714,22 @@
         s3T: "Auditing Existing Work to Purge Vanity",
         s3P: "\"Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation.\"",
 
-        aHead: "Quick Start & Installation",
-        aIntro: "As an open Agent Skill and prompt specification, this framework supports three primary deployment environments:",
-        instC1B: "1. TERMINAL CODING AGENTS",
-        instC1T: "Claude Code / Antigravity CLI",
-        instC1D: "Native standard Skill. Automatically activates when feature planning or UX decisions arise.",
-        instC2B: "2. DESKTOP AI IDES",
-        instC2T: "Cursor / Windsurf",
-        instC2D: "Inject directly as project-level rules to guide code generation and UX reasoning:",
-        instC2L: "<li><strong>Cursor</strong>: Create <code>.cursor/rules/human-centered-feature-design.mdc</code> or paste into <code>.cursorrules</code>.</li><li><strong>Windsurf</strong>: Save into <code>.windsurfrules</code> at repository root.</li>",
-        instC3B: "3. CHAT CLIENTS",
-        instC3T: "Claude Desktop / Claude.ai / ChatGPT",
-        instC3D: "Zero command-line required. Use in standard conversational chat interfaces:",
-        instC3L: "<li><strong>Claude Projects (Recommended)</strong>: Upload <code>SKILL.md</code> to Project Knowledge & set Custom Instructions.</li><li><strong>Ad-hoc Chat</strong>: Attach <code>SKILL.md</code> directly into any conversation.</li>",
+        uHead: "Usage: Command Line & Manual Modes",
+        uIntro: "This framework supports two distinct usage paths: a <strong>Command Line mode</strong> for terminal-first developers and coding agents, and a <strong>Manual mode</strong> for product managers, designers, and team collaboration.",
+
+        m1Badge: "MODE 01 · TERMINAL & CODING AGENTS",
+        m1Title: "Mode 1: Command Line Mode (Agent CLI)",
+        m1Desc: "For developers: rapid CLI installation and direct pairing with Claude Code or Antigravity CLI.",
+        m1S1Title: "1. CLI Installation",
+        m1S2Title: "2. Terminal Pairing & Code Review",
+
+        m2Badge: "MODE 02 · MANUAL & HUMAN AUDIT",
+        m2Title: "Mode 2: Manual Mode (GUI & Review)",
+        m2Desc: "For PMs and designers: zero command-line required. Use in AI chat apps or as an offline review checklist.",
+        m2S1Title: "1. GUI & Chat Integrations (No-CLI AI)",
+        m2S1List: "<li><strong>Claude Projects (Recommended)</strong>: Upload <code>SKILL.md</code> to Project Knowledge & set Custom Instructions.</li><li><strong>Desktop AI IDEs (Cursor/Windsurf)</strong>: Create <code>.cursorrules</code> or <code>.windsurfrules</code> in project root.</li><li><strong>Ad-hoc Chat</strong>: Drag and drop <code>SKILL.md</code> directly into ChatGPT or Claude conversation.</li>",
+        m2S2Title: "2. Standalone Review Checklist (Zero-AI)",
+        m2S2List: "<li><strong>Feature Scoping</strong>: Check motivation types (discrete vs. continuous) and manage digestive debt.</li><li><strong>Interaction Architecture</strong>: Cross-check the 6 Agency Touchpoints to prevent cognitive drop-offs.</li><li><strong>Pre-Flight Audit</strong>: Audit proposed PRDs against the Three Litmus Tests.</li>",
 
         rHead: "Production Retrospectives",
         rIntro: "Two grounded case studies demonstrating theoretical deduction resolving real commercial UX problems:",
@@ -756,19 +786,20 @@
       document.getElementById('s3-t').innerText = d.s3T;
       document.getElementById('s3-p').innerText = d.s3P;
 
-      document.getElementById('txt-a-head').innerText = d.aHead;
-      document.getElementById('txt-a-intro').innerText = d.aIntro;
-      document.getElementById('inst-c1-b').innerText = d.instC1B;
-      document.getElementById('inst-c1-t').innerText = d.instC1T;
-      document.getElementById('inst-c1-d').innerText = d.instC1D;
-      document.getElementById('inst-c2-b').innerText = d.instC2B;
-      document.getElementById('inst-c2-t').innerText = d.instC2T;
-      document.getElementById('inst-c2-d').innerText = d.instC2D;
-      document.getElementById('inst-c2-l').innerHTML = d.instC2L;
-      document.getElementById('inst-c3-b').innerText = d.instC3B;
-      document.getElementById('inst-c3-t').innerText = d.instC3T;
-      document.getElementById('inst-c3-d').innerText = d.instC3D;
-      document.getElementById('inst-c3-l').innerHTML = d.instC3L;
+      document.getElementById('txt-u-head').innerText = d.uHead;
+      document.getElementById('txt-u-intro').innerHTML = d.uIntro;
+      document.getElementById('m1-badge').innerText = d.m1Badge;
+      document.getElementById('m1-title').innerText = d.m1Title;
+      document.getElementById('m1-desc').innerText = d.m1Desc;
+      document.getElementById('m1-s1-title').innerText = d.m1S1Title;
+      document.getElementById('m1-s2-title').innerText = d.m1S2Title;
+      document.getElementById('m2-badge').innerText = d.m2Badge;
+      document.getElementById('m2-title').innerText = d.m2Title;
+      document.getElementById('m2-desc').innerText = d.m2Desc;
+      document.getElementById('m2-s1-title').innerText = d.m2S1Title;
+      document.getElementById('m2-s1-list').innerHTML = d.m2S1List;
+      document.getElementById('m2-s2-title').innerText = d.m2S2Title;
+      document.getElementById('m2-s2-list').innerHTML = d.m2S2List;
 
       document.getElementById('txt-r-head').innerText = d.rHead;
       document.getElementById('txt-r-intro').innerText = d.rIntro;
