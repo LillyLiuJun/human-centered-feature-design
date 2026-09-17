@@ -29,48 +29,24 @@
 
 ---
 
-## 使用方式：命令行与手动两种模式 (Usage)
+## 使用方式 (Usage)
 
-本框架支持两种完全不同的使用路径：针对工程师与终端习惯者的**命令行方式**，以及针对产品经理、设计师与日常协作的**手动方式**。
+这是一个短小精悍的独立 Skill。你可以通过三种最轻量的方式使用它：
 
-### 方式一：命令行方式 (Command Line / Agent CLI)
-*面向终端与开发者：通过命令行一键安装，并与终端 Coding Agent（如 Claude Code / Antigravity CLI）实时结对推演。*
+### 1. 手动使用
+直接下载 [`SKILL_zh.md`](SKILL_zh.md)（或英文版 [`SKILL.md`](../SKILL.md)），上传至 Claude.ai Project 知识库、Cursor/Windsurf 规则配置（如 `.cursorrules`），或直接粘贴进任意 AI 对话框中。
 
-#### 1. 终端一键安装 (CLI Install)
+### 2. 命令行安装到本地共享 Skill 目录
+通过单行命令直接布局到本地 Coding Agent 的全局技能库：
 ```bash
-# 全局安装到 Claude Code 技能目录
-mkdir -p ~/.config/skills/human-centered-feature-design
-cp SKILL_zh.md ~/.config/skills/human-centered-feature-design/SKILL.md
-```
-*生效后，终端 Agent 在检测到功能设计、交互规划或组件代码重构时会自动调度。*
-
-#### 2. 终端结对推演与代码审查 (Terminal Pairing)
-在日常终端编码中，直接向 Coding Agent 发起情境推导或代码审查：
-```bash
-# 功能契约与信息呈现推导
-claude "帮我看看这个卡片应该展示哪些数据和信息，才能真正契合当下情境，促使用户去使用？"
-
-# PR / 代码微观交互审查
-claude "用 human-centered-feature-design 审查当前分支的代码：卡片展开在切走或失焦时的边界，何时保留状态、何时静默复位？"
+git clone https://github.com/LillyLiuJun/human-centered-feature-design.git ~/.config/skills/human-centered-feature-design
 ```
 
----
-
-### 方式二：手动方式 (Manual / GUI & Human Review)
-*面向产品经理、设计师与日常协作：无需敲命令行，支持通过图形界面对话，或作为团队纯人工自检手册。*
-
-#### 1. 图形界面 / 对话助手接入 (No-CLI AI Chat)
-* **Claude.ai / Claude Desktop（推荐）**：在网页端或桌面端新建一个 **Project（项目）**，手动将 `SKILL_zh.md` 上传至 **Project Knowledge（项目知识库）**。在项目指令中添加：*“推演产品功能与交互时，严格调用《以人为中心的功能设计》框架”*，即可在此项目中长期生效；
-* **桌面 AI IDE（Cursor / Windsurf）**：在编辑器左侧文件树中手动新建规则文件：
-  * **Cursor**：创建 `.cursor/rules/human-centered-feature-design.mdc`，或将 `SKILL_zh.md` 粘贴到 `.cursorrules` 中；
-  * **Windsurf**：将内容保存至项目根目录的 `.windsurfrules` 中；
-* **单次会话直接使用**：在 ChatGPT、Claude 或任意聊天窗口中，直接将 `SKILL_zh.md` 拖拽作为文件附件发送即可开始对话。
-
-#### 2. 纯人工自检与评审手册 (Manual Checklist / Zero-AI)
-*脱离任何 AI 工具，团队在撰写 PRD、绘制原型或进行跨职能需求评审会（Design Review）时直接作为避坑核对清单：*
-* **需求定案前**：核对 [底层世界观](#底层世界观为什么这套推理行之有效) 与 [动机设计](#模块一动机设计让功能成为需求的自然出口)，界定属于离散型还是连续型，避免堆砌静态库存；
-* **交互细节推演**：核对 [能力感六大环节](#模块二能力感设计交互六大环节的尊严沉淀)，排查用户在感知、决策与操作中是否存在认知卡顿或归功偏差；
-* **上线前终审**：逐一对照 [三条黄金检验原则](#上线前审查三条黄金检验原则) 打钩自检（是否制造焦虑？是否剥夺掌控感？是否制造处境噪音？）。
+### 3. 让你的 Agent 自动安装
+在终端或对话中直接给你的 Coding Agent 发送提示词：
+```text
+帮我安装并启用这个 skill：https://github.com/LillyLiuJun/human-centered-feature-design
+```
 
 ---
 
