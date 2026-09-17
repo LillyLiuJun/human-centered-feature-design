@@ -126,11 +126,7 @@ Before shipping any feature or interaction, audit it against three final filters
 
 ---
 
-## Specifications & License
- 
-* **`SKILL.md`**: Canonical English specification for coding agents and AI workflows.
-* **`docs/SKILL_zh.md`**: Complete Chinese prompt specification (100% original text).
-* **`docs/README_zh.md`**: Full Chinese documentation and usage guide.
-* **`examples/`**: Deep dive retrospective case studies.
+## License
 
-Released under the [MIT License](LICENSE). Calm, principled, and free.
+Released under the [MIT License](LICENSE).
+

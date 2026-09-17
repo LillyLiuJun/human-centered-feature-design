@@ -126,10 +126,7 @@ claude "用 human-centered-feature-design 审查当前分支的代码：卡片�
 
 ---
 
-## 规范文件与开源协议
+## 开源协议 (License)
 
-* **`SKILL_zh.md`**：中文完整原始规范（100% 原汁原味）。
-* **`../SKILL.md`**：英文规范文件，适合通用 AI Agent 工作流。
-* **`../examples/`**：两篇真实业务复盘完整文档。
+本项目采用 [MIT 许可证](../LICENSE)。
 
-本项目采用 [MIT 许可证](../LICENSE)。温润、克制、自由。
