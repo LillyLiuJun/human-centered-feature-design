@@ -7,25 +7,17 @@
 # Human-Centered Feature Design
 ### `human-centered-feature-design`
 
-**Restoring human balance, not manufacturing motivation.**  
-*A calm, principled framework for genuine user agency and natural retention.*
+[English](README.md) • [中文](docs/README_zh.md)
 
-[English](README.md) • [中文说明](docs/README_zh.md) • [Skill Prompt (EN)](SKILL.md) • [Skill Prompt (ZH)](docs/SKILL_zh.md) • [Examples](examples/)
-
----
-
-### *"Humans are not variables of products; products are variables of humans."*  
-Needs arise from deviations from balance; products serve as vehicles to restore balance. Products cannot manufacture needs; they can only serve as outlets.
-
----
+<br />
 
 </div>
 
-## Core Purpose & Usage Scenarios
+> *"Humans are not variables of products; products are variables of humans. Needs arise from deviations from balance; products cannot manufacture desire, only serve as vehicles to restore equilibrium."*
 
-**Human-Centered Feature Design** is a reasoning framework designed to **test and refine features to ensure they genuinely fulfill authentic user needs**.
+**Human-Centered Feature Design** is a situated reasoning framework designed to **restore human balance, not manufacture motivation**. It tests and refines product solutions—from macro feature contracts down to micro interaction state boundaries—ensuring every design genuinely fulfills authentic user needs rather than team vanity or synthetic stickiness.
 
-It deduces what users actually require in specific situations—from macro feature definitions down to micro interaction details—grounding product solutions in human psychology rather than team-centric vanity or synthetic stickiness.
+---
 
 ### Common Prompt Triggers
 
@@ -112,72 +104,24 @@ The repository includes two comprehensive production case studies from a commerc
 
 ---
 
-## The Foundational Worldview
+## Philosophy
 
-All situated deductions stem from three immutable assumptions regarding human psychology:
+All situated deductions in this framework operate on a single axiom: **products are vehicles to restore human balance, not engines to exploit human attention.**
 
 ```
-                    ┌────────────────────────────────────────┐
-                    │            The Human in Situ           │
-                    │ (Finite cognitive load, biological     │
-                    │   rhythms, and environmental context)   │
-                    └───────────────────┬────────────────────┘
-                                        │
-                               Deviates from balance
-                                        │
-                                        ▼
-                    ┌────────────────────────────────────────┐
-                    │       Product as Relief Valve          │
-                    ├────────────────────────────────────────┤
-                    │ • Motivation: Need topology alignment  │
-                    │ • Sense of Agency: 6 Touchpoints        │
-                    │ • Trigger: FBM contextual gap diagnosis │
-                    └───────────────────┬────────────────────┘
-                                        │
-                                        ▼
-                       Balance Restored · Sovereign Agency Felt
+Human in Disequilibrium ──► Product as Quiet Relief Valve ──► Balance Restored · Sovereign Agency Felt
 ```
 
-1. **Human Homeostasis**: Humans are self-regulating systems. Needs arise from disequilibrium. Products cannot manufacture organic desire; they can only serve as frictionless relief valves.
-2. **Sense of Agency**: Humans are cognitively fragile yet crave sovereignty. The system's highest virtue is invisible scaffolding, crediting all achievement to the human. **Great systems are quiet.**
-3. **Situated Context**: Humans live in concrete physical situations. Influence is borrowed from contextual fit, never permanently owned by the product.
+This philosophy translates into three operational pillars and their corresponding litmus tests:
 
----
+1. **Homeostasis over Synthetic Motivation**: Needs stem from natural deviations from psychological or physical equilibrium. Products cannot manufacture organic desire; they serve as frictionless outlets for discrete resolution or continuous momentum (managing digestive debt rather than piling static inventory).  
+   *➔ Litmus Test: Does this return the human to balance, or manufacture synthetic anxiety?*
 
-## The 3-Part Architecture
+2. **Sovereign Agency over Coercive Mechanics**: Humans crave mastery. The system scaffolds invisibly across the six cognitive touchpoints (perception, search, decision, action, evaluation, and habit), always crediting the human rather than algorithmic wizardry. **Great systems are quiet.**  
+   *➔ Litmus Test: Does the user feel sovereign agency, or are they being piloted by system mechanics?*
 
-### Module 1: Motivation Architecture — Products as Relief Valves
-| Need Type | Dynamics | Examples | Retention Mechanism |
-|---|---|---|---|
-| **Discrete** | Clear, objective completion state. | Weather, dictionary, calculator | **Exchange results for trust**: Precise fulfillment builds subconscious recall for the next deviation. |
-| **Continuous** | No objective finish line; fluctuates with state. | Curiosity, expression, companionship | **Exchange continuity for stickiness**: Leave gentle unfinished momentum; manage digestive debt over static inventory. |
-| **Hybrid** | Measurable milestones with infinite horizons. | Language learning, writing, coding | Balance concrete results with sustainable progressive tension. |
-
-### Module 2: Sense of Agency — The 6 Touchpoints
-Agency is not empty praise; it is earned across six interlocking touchpoints:
-1. **Perception**: Translate ambiguous impulses into tangible outlets ("Yes, this is my path forward").
-2. **Search & Association**: Align architecture with existing mental models, minimizing needless cognitive overhead.
-3. **Decision**: Eliminate decision friction along the Golden Path; provide undo mechanisms for irreversible actions.
-4. **Action**: Immediate physical feedback; protect continuous execution.
-5. **Result Evaluation**: **Strictly align entry promises with delivery**; attribute success to the user, not algorithm magic.
-6. **Habit Formation**: Never break core muscle memory; ready subsequent pathways at moments of peak satisfaction.
-
-### Module 3: Trigger Design — Situated Availability
-* **Deconstruct the Real Situation**: Spatial constraints, temporal baselines, and cognitive bandwidth.
-* **Diagnose the FBM Gap**: Is the user blocked by motivation, ability (cognitive friction), or poor timing?
-* **Scaffold Without Noise**: Provide precise scaffolding at the gap; eliminate unprompted mechanical push notifications.
-
----
-
-## The Three Litmus Tests
-
-Before deploying any feature or interaction, audit it against these three filters:
-
-1. **Does this return the human to equilibrium, or manufacture synthetic anxiety?**
-2. **Does the user feel sovereign agency, or are they being piloted by system mechanics?**
-3. **Does this embed into the user's authentic situation, or create tone-deaf noise?**
-
-*A design only ships when all three answers are unequivocally the former.*
+3. **Situated Context over Mechanical Triggers**: Products only borrow influence when they precisely fit the user's spatial constraints, biological rhythms, and cognitive margins. Eliminate unprompted notification spam by diagnosing the true behavioral gap (FBM).  
+   *➔ Litmus Test: Does this embed seamlessly into authentic lived context, or create tone-deaf noise?*
 
 ---
 
