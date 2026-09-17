@@ -112,16 +112,17 @@ All situated deductions in this framework operate on a single axiom: **products 
 Human in Disequilibrium ──► Product as Quiet Relief Valve ──► Balance Restored · Sovereign Agency Felt
 ```
 
-This philosophy translates into three operational pillars and their corresponding litmus tests:
+This philosophy translates into three operational pillars:
 
-1. **Homeostasis over Synthetic Motivation**: Needs stem from natural deviations from psychological or physical equilibrium. Products cannot manufacture organic desire; they serve as frictionless outlets for discrete resolution or continuous momentum (managing digestive debt rather than piling static inventory).  
-   *➔ Litmus Test: Does this return the human to balance, or manufacture synthetic anxiety?*
+1. **Homeostasis over Synthetic Motivation**: Needs stem from natural deviations from psychological or physical equilibrium. Products cannot manufacture organic desire; they serve as frictionless outlets for discrete resolution or continuous momentum (managing digestive debt rather than piling static inventory).
+2. **Sovereign Agency over Coercive Mechanics**: Humans crave mastery. The system scaffolds invisibly across the six cognitive touchpoints (perception, search, decision, action, evaluation, and habit), always crediting the human rather than algorithmic wizardry. **Great systems are quiet.**
+3. **Situated Context over Mechanical Triggers**: Products only borrow influence when they precisely fit the user's spatial constraints, biological rhythms, and cognitive margins. Eliminate unprompted notification spam by diagnosing the true behavioral gap (FBM).
 
-2. **Sovereign Agency over Coercive Mechanics**: Humans crave mastery. The system scaffolds invisibly across the six cognitive touchpoints (perception, search, decision, action, evaluation, and habit), always crediting the human rather than algorithmic wizardry. **Great systems are quiet.**  
-   *➔ Litmus Test: Does the user feel sovereign agency, or are they being piloted by system mechanics?*
-
-3. **Situated Context over Mechanical Triggers**: Products only borrow influence when they precisely fit the user's spatial constraints, biological rhythms, and cognitive margins. Eliminate unprompted notification spam by diagnosing the true behavioral gap (FBM).  
-   *➔ Litmus Test: Does this embed seamlessly into authentic lived context, or create tone-deaf noise?*
+### The Three Litmus Tests
+Before shipping any feature or interaction, audit it against three final filters:
+* **Does this return the human to balance, or manufacture synthetic anxiety?**
+* **Does the user feel sovereign agency, or are they being piloted by system mechanics?**
+* **Does this embed seamlessly into authentic lived context, or create tone-deaf noise?**
 
 ---
 
