@@ -1,17 +1,15 @@
 <div align="center">
-
-<img src="assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
-
-<br /><br />
-
-# Human-Centered Feature Design
-### `human-centered-feature-design`
-
-[English](README.md) • [中文](docs/README_zh.md)
-
-<br />
-
+  <img src="assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
 </div>
+
+<p align="right">
+  <b>English</b> &nbsp;•&nbsp; <a href="docs/README_zh.md">中文</a>
+</p>
+
+<div align="center">
+  <h3>Human-Centered Feature Design</h3>
+</div>
+
 
 > *"Humans are not variables of products; products are variables of humans. Needs arise from deviations from balance; products cannot manufacture desire, only serve as vehicles to restore equilibrium."*
 

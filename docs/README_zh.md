@@ -1,17 +1,15 @@
 <div align="center">
-
-<img src="../assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
-
-<br /><br />
-
-# Human-Centered Feature Design
-### 以人为中心的产品功能设计
-
-[English](../README.md) • [中文](README_zh.md)
-
-<br />
-
+  <img src="../assets/readme-banner.png" alt="Human-Centered Feature Design Banner" width="100%" />
 </div>
+
+<p align="right">
+  <a href="../README.md">English</a> &nbsp;•&nbsp; <b>中文</b>
+</p>
+
+<div align="center">
+  <h3>以人为中心的产品功能设计</h3>
+</div>
+
 
 > *“人不是产品的变量，产品才是人的变量。需求来自偏离平衡，产品无法凭空制造渴望，只能成为恢复稳态的出口。”*
 
