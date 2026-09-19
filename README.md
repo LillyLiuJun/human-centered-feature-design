@@ -17,17 +17,42 @@
 
 ---
 
-### Common Prompt Triggers
+## When to Use
 
-Invoke this Skill in scenarios such as:
+Any product feature ultimately comes down to two dimensional decisions: what data to present to the user, and how the user interacts with that data. When facing an ambiguous feature requirement, invoke this Skill to answer two core questions:
 
-* **Defining the Core Contract (What Data to Show)**: *"Look at this card: what data and information should it actually display to fit the user's situation and motivate usage?"* ➔ [Case 01: Topic Card System](#case-01-the-topic-card-system--content-contract--context-alignment)
-* **Deducing Micro-Interaction Boundaries**: *"Analyze the user's genuine need and how to design the interaction: e.g., when an expanded card is scrolled away or blurred, when should it maintain state and when should it silently reset?"* ➔ [Case 02: Dynamic Reading States](#case-02-dynamic-reading-states--the-3-situational-boundaries)
-* **Auditing Existing Work to Purge Vanity**: *"Audit this current proposal against the Three Litmus Tests to eliminate team vanity and artificial motivation."*
+1. **Data (The "What")**: Stripping away vanity metrics and pseudo-needs, what data should the frontend actually display to reduce decision friction?
+2. **Interaction (The "How")**: Breaking away from rigid machine logic, what state boundaries actually align with human flow and intuition?
+
+Here is how the Skill reasons in real-world commercial scenarios (see `examples/` for full retrospectives):
+
+### Case 01: Data Restraint (Topic Cards)
+> **Scenario**: Designing a "Daily Topic" card feed to motivate users to practice speaking.
+>
+> **Before**:
+> The system passed raw data directly to the frontend. Cards displayed statistical metrics with weak relevance to the user's current task (e.g., `46 pops`, `+12 more moments`), alongside flattened, scattered text from the user's past inputs. Without limits on information hierarchy, the interface generated significant cognitive redundancy.
+>
+> **After**:
+> **1. Diagnosis**: The original data stream failed to help users form concrete action expectations.
+> **2. Data Convergence**: Removed global statistical metrics and restructured the underlying data.
+> **Final Presentation**: Aggregated the user's historical activities (Activity). Replaced global click counts with personal progress states (e.g., "never talked", "practiced 3 days ago"), transforming static system inventory into a personalized "digestive debt" list.
+
+### Case 02: Interaction Empathy (Card Expand/Collapse)
+> **Scenario**: In a reading feed, tapping a card expands it to show the full text. Product requirement: "Automatically collapse the card when the user leaves the current content."
+>
+> **Before**:
+> The logic equated "leaving content" directly with "leaving the current page (Tab)." When scrolling vertically within the list, the system did not trigger auto-collapse, reasoning that users might notice a state change upon scrolling back. As users expanded multiple cards, the list lengthened continually, and the screen remained occupied by already-read information.
+>
+> **After**:
+> **1. State Analysis**: Deduced that "expanded" is not a persistent data attribute of the card, but a localized, temporary state of user focus.
+> **2. Defining Boundaries**: Based on the lifecycle of this state, the rules were divided into three contextual boundaries:
+>    - *Local interactions within the viewport (e.g., keyboard rising)* ➔ **Maintain expanded state; do not intervene.**
+>    - *Card completely slides out of the visible area* ➔ **Silently collapse off-screen with no animation transition.** When the user scrolls back, the interface has returned to its clean default list structure.
+>    - *Switching pages or Tabs* ➔ **Trigger global state reset.**
 
 ---
 
-## Usage
+## Install
 
 This is a concise, self-contained skill. You can integrate it in three simple ways:
 
@@ -45,36 +70,6 @@ Send this prompt to your coding agent:
 ```text
 Install and enable this skill in my environment: https://github.com/LillyLiuJun/human-centered-feature-design
 ```
-
----
-
-## Production Retrospectives (`examples/`)
-
-The repository includes two comprehensive production case studies from a commercial AI language immersion app, demonstrating how theoretical deduction rescues real features:
-
-### Case 01: The Topic Card System — Content Contract & Context Alignment
-> Full retrospective: [`examples/01-talk-about-today-cards.md`](examples/01-talk-about-today-cards.md)
-
-* **Initial Pseudo-Design**: The team assumed low CTR on "Daily Topic" cards was a visual issue, planning fancier animations and more categories.
-* **Situated Diagnosis**:
-  1. Users opening the app during dedicated practice times already possess high intrinsic motivation; they do not need synthetic hype.
-  2. The actual bottleneck was **decision friction**—users had no idea how long a broad category like "Travel" would take or what it demanded.
-  3. The card broke its contract: promising a specific prompt ("Talk about yesterday's dream") but delivering an abstract category list.
-* **Resolution**: Rebuilt from "categories" to "strict contract cards"; shifted from static inventory to digestive debt management; decision friction dropped to zero.
-
----
-
-### Case 02: Dynamic Reading States — The 3 Situational Boundaries
-> Full retrospective: [`examples/02-expand-collapse-state.md`](examples/02-expand-collapse-state.md)
-
-* **Initial Pseudo-Design**: To support deep reading, cards expanded on tap. But keeping them expanded cluttered the screen upon return, while mechanical auto-collapse cut off active readers mid-sentence.
-* **Situated Diagnosis**:
-  1. Card expansion is not permanent content state, but an ephemeral **"transient focus state."**
-  2. Once the user's attention shifts (scrolled off-screen, switched tabs, locked phone), the focus state has expired. Persisting it burdens the user with visual clutter.
-* **Resolution**: Deduced three rigorous situational boundaries:
-  * *Micro-interruption in viewport* (brief pause, incoming call) ➔ **Protect flow; never collapse**;
-  * *Completely leaves viewport* (scrolled out of sight) ➔ **Silent, smooth reset without visual jumps**;
-  * *Leaves page/tab* (switching context) ➔ **Silent reset to pristine order**.
 
 ---
 
