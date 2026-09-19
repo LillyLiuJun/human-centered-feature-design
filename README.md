@@ -37,22 +37,9 @@ When reasoning through component lifecycles and user flows, defining the boundar
 
 ## Install
 
-This is a concise, self-contained skill. You can integrate it in three simple ways:
+Send the link directly to your agent or chatbot:
+> Install and enable this skill for my current environment: https://github.com/LillyLiuJun/human-centered-feature-design
 
-### 1. Manual
-Download [`SKILL.md`](SKILL.md) and upload it to Claude.ai Project Knowledge, Cursor/Windsurf rules (`.cursorrules`), or directly into any AI conversation.
-
-### 2. Install to Shared Skills Directory
-Clone directly into your local coding agent's shared skills path:
-```bash
-git clone https://github.com/LillyLiuJun/human-centered-feature-design.git ~/.config/skills/human-centered-feature-design
-```
-
-### 3. Let Your Agent Install It
-Send this prompt to your coding agent:
-```text
-Install and enable this skill in my environment: https://github.com/LillyLiuJun/human-centered-feature-design
-```
 
 ---
 

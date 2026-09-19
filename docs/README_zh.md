@@ -37,22 +37,9 @@
 
 ## 安装 (Install)
 
-这是一个短小精悍的独立 Skill。你可以通过三种最轻量的方式使用它：
+将链接直接发给你的 Agent 或 chatbot：
+> 根据当前开发环境，帮我安装并启用这个 skill：https://github.com/LillyLiuJun/human-centered-feature-design
 
-### 1. 手动使用
-直接下载 [`SKILL_zh.md`](SKILL_zh.md)（或英文版 [`SKILL.md`](../SKILL.md)），上传至 Claude.ai Project 知识库、Cursor/Windsurf 规则配置（如 `.cursorrules`），或直接粘贴进任意 AI 对话框中。
-
-### 2. 命令行安装到本地共享 Skill 目录
-通过单行命令直接布局到本地 Coding Agent 的全局技能库：
-```bash
-git clone https://github.com/LillyLiuJun/human-centered-feature-design.git ~/.config/skills/human-centered-feature-design
-```
-
-### 3. 让你的 Agent 自动安装
-在终端或对话中直接给你的 Coding Agent 发送提示词：
-```text
-帮我安装并启用这个 skill：https://github.com/LillyLiuJun/human-centered-feature-design
-```
 
 ---
 
