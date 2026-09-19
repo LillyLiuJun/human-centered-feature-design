@@ -19,36 +19,19 @@
 
 ## When to Use
 
-Any product feature ultimately comes down to two dimensional decisions: what data to present to the user, and how the user interacts with that data. When facing an ambiguous feature requirement, invoke this Skill to answer two core questions:
+This framework applies across the full decision-making lifecycle of a product feature—from conceptual ideation and information definition to interaction execution. Invoke it when facing these three foundational questions:
 
-1. **Data (The "What")**: Stripping away vanity metrics and pseudo-needs, what data should the frontend actually display to reduce decision friction?
-2. **Interaction (The "How")**: Breaking away from rigid machine logic, what state boundaries actually align with human flow and intuition?
+### 1. Content & Feature Definition: What should this feature actually do?
+When planning new features or auditing existing proposals, defining core value and reason for existence.
+* **Analytical Lens**: Audit whether the demand arises from authentic human disequilibrium or artificial team vanity. Establish a clear "content contract" promised to the user, strictly avoiding synthetic features designed only to manufacture motivation.
 
-Here is how the Skill reasons in real-world commercial scenarios (see `examples/` for full retrospectives):
+### 2. Data & Information Presentation: What data is truly valuable to display?
+When translating a feature into an interface, deciding what information genuinely supports user action.
+* **Analytical Lens**: Strip away system-centric database noise and vanity metrics. Converge sprawling backend fields into key contextual states that directly reduce decision friction.
 
-### Case 01: Data Restraint (Topic Cards)
-> **Scenario**: Designing a "Daily Topic" card feed to motivate users to practice speaking.
->
-> **Before**:
-> The system passed raw data directly to the frontend. Cards displayed statistical metrics with weak relevance to the user's current task (e.g., `46 pops`, `+12 more moments`), alongside flattened, scattered text from the user's past inputs. Without limits on information hierarchy, the interface generated significant cognitive redundancy.
->
-> **After**:
-> **1. Diagnosis**: The original data stream failed to help users form concrete action expectations.
-> **2. Data Convergence**: Removed global statistical metrics and restructured the underlying data.
-> **Final Presentation**: Aggregated the user's historical activities (Activity). Replaced global click counts with personal progress states (e.g., "never talked", "practiced 3 days ago"), transforming static system inventory into a personalized "digestive debt" list.
-
-### Case 02: Interaction Empathy (Card Expand/Collapse)
-> **Scenario**: In a reading feed, tapping a card expands it to show the full text. Product requirement: "Automatically collapse the card when the user leaves the current content."
->
-> **Before**:
-> The logic equated "leaving content" directly with "leaving the current page (Tab)." When scrolling vertically within the list, the system did not trigger auto-collapse, reasoning that users might notice a state change upon scrolling back. As users expanded multiple cards, the list lengthened continually, and the screen remained occupied by already-read information.
->
-> **After**:
-> **1. State Analysis**: Deduced that "expanded" is not a persistent data attribute of the card, but a localized, temporary state of user focus.
-> **2. Defining Boundaries**: Based on the lifecycle of this state, the rules were divided into three contextual boundaries:
->    - *Local interactions within the viewport (e.g., keyboard rising)* ➔ **Maintain expanded state; do not intervene.**
->    - *Card completely slides out of the visible area* ➔ **Silently collapse off-screen with no animation transition.** When the user scrolls back, the interface has returned to its clean default list structure.
->    - *Switching pages or Tabs* ➔ **Trigger global state reset.**
+### 3. Interaction & State Dynamics: How to design interactions that remain undisturbed?
+When reasoning through component lifecycles and user flows, defining the boundaries of how states emerge and dissolve across time and space.
+* **Analytical Lens**: Break away from rigid linear machine logic. Distinguish persistent states from ephemeral focus states, rigorously deducing natural transitions and silent resets when scrolling, blurring, or switching contexts.
 
 ---
 
