@@ -37,7 +37,7 @@ When reasoning through component lifecycles and user flows, defining the boundar
 
 ## Install
 
-Send the link directly to your agent or chatbot:
+Send the link directly to your agent:
 > Install and enable this skill for my current environment: https://github.com/LillyLiuJun/human-centered-feature-design
 
 
