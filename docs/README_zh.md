@@ -37,7 +37,7 @@
 
 ## 安装 (Install)
 
-将链接直接发给你的 Agent 或 chatbot：
+将链接直接发给你的 Agent：
 > 根据当前开发环境，帮我安装并启用这个 skill：https://github.com/LillyLiuJun/human-centered-feature-design
 
 
