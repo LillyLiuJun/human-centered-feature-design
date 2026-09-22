@@ -1,6 +1,6 @@
 ---
 name: human-centered-feature-design
-description: Design continuous engagement loops for product features based on human homeostasis, sense of agency, and situated context. Use this skill whenever a user proposes a feature idea, discusses existing functionality, or asks: "Help me design this feature", "Why would users keep using this?", "How can this feature retain users?", or "How should the interaction flow work?". Delivers a complete feature design specification covering Motivation, Sense of Agency, and Triggers, ready for immediate product decisions.
+description: Deeply understand authentic human needs and design product features with intuitive, disturbance-free interaction experiences. Use this skill whenever a user proposes a feature idea, discusses existing functionality, or asks: "Help me design this feature", "What is the genuine user need here?", "Does this feature actually solve a real problem?", or "How should the interaction experience work?". Guides the AI to unearth real user context, strip away synthetic motivation, and craft human-centered product and interaction designs that truly fit users.
 ---
 
 # Human-Centered Feature Design Skill
